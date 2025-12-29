@@ -1,0 +1,21 @@
+simulator = MirageSimulator()
+
+# Run the simulation in a separate thread
+sim_thread = threading.Thread(target=run_simulation, args=(simulator,))
+
+# Run the admin recall prompt in another daemon thread
+recall_thread = threading.Thread(target=admin_recall_prompt, args=(simulator, sim_thread))
+recall_thread.daemon = True # Allows main program to exit even if this thread is running
+
+sim_thread.start()
+recall_thread.start()
+
+sim_thread.join() # Wait for the simulation thread to finish
+
+# --- Print Final Report ---
+print("-" * 80)
+print(f"\n{colors.CYAN}--- SIMULATION COMPLETE ---{colors.RESET}")
+print(f"{colors.WHITE}Total Threats Processed: {simulator.threats_processed}")
+print(f"{colors.GREEN}Threats Redirected to Decoys: {simulator.threats_redirected}")
+print(f"{colors.YELLOW}Final Active Decoy Systems: {simulator.active_decoys}")
+print(f"{colors.CYAN}---------------------------{colors.RESET}\n")
